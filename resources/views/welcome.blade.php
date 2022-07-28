@@ -174,7 +174,7 @@
 
 <div class="flex justify-center mt-5 flex gap-1 items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-indigo-700">
     <div>Lien d'invitation discord -</div>
-    <div class="underline">https://discord.gg/kt75BpeqtV</div>
+    <a href="https://discord.gg/kt75BpeqtV">https://discord.gg/kt75BpeqtV</a>
 </div>
 
 </body>
