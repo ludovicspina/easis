@@ -149,8 +149,8 @@
                             <div class="rounded-md shadow w-3/4">
                                 <div
                                     class="flex gap-1 items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-                                    <div class="underline">Officiers de guilde :</div>
-                                    <div class="animate-pulse">Recrutement en cours ...</div>
+                                    <div class="underline">Officier de guilde :</div>
+                                    <div class="animate-pulse">Dewylia</div>
                                 </div>
                             </div>
                         </div>
