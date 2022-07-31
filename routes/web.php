@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::view('/', 'home')->name('home');;
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -26,6 +28,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+// classes
+Route::view('/classes', 'classes/classes')->name('classes');
 
-Route::view('/classes', 'classes/classes')->name('classes');;
-Route::view('/', 'home')->name('home');;
+
+//astuce
+Route::view('/astuces', 'astuces')->name('astuces');
