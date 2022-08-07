@@ -15,14 +15,14 @@
 <body class="antialiased bg-gray-800">
 
 
-<nav class="px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+<nav class="px-2 py-2 bg-gray-900 border-gray-800">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" class="flex items-center">
             <img src="{{asset('/img/logo-easis.png')}}" class="mr-3 h-6 sm:h-10" alt="Flowbite Logo">
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Easis</span>
+            <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Easis</span>
         </a>
         <button data-collapse-toggle="navbar-multi-level" type="button"
-                class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500"
+                class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 hover:text-white focus:ring-gray-500"
                 aria-controls="navbar-multi-level" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -32,48 +32,20 @@
                       clip-rule="evenodd"></path>
             </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
-            <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <div class="hidden w-full md:block md:w-auto bg-gray-900" id="navbar-multi-level">
+            <ul class="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-900 border-gray-700">
                 <li>
                     <a href="{{ route('astuces') }}"
-                       class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Astuces</a>
+                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 md:hover:bg-transparent">Astuces</a>
                 </li>
                 <li>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                        Tutoriels
-                        <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <!-- Dropdown menu -->
-                    <div id="dropdownNavbar"
-                         class="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                            <li>
-                                <a href="{{route('classes')}}"
-                                   class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Classes
-                                    (WIP)</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <a href="{{ route('wiki') }}"
+                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Wiki</a>
                 </li>
-                @if (Route::has('login'))
-                    @auth
-                        <li>
-                            <a href="{{ url('/dashboard') }}"
-                               class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Administration</a>
-                        </li>
-                    @else
-                        <li>
-                            <a href="{{ route('login') }}"
-                               class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Administration</a>
-                        </li>
-                    @endauth
-                @endif
+                <li>
+                    <a href="{{ route('classes') }}"
+                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Classes</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -81,32 +53,39 @@
 
 @section('content')
 @show
-
+<div class="mt-32"></div>
 <footer
-    class="p-4 bg-white inset-x-0 bottom-0 absolute shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-900">
-
-
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com/"
-                                                                                    class="hover:underline">FondationPXN™</a> All Rights Reserved.
+    class="p-4 inset-x-0 bottom-0 fixed shadow md:flex md:items-center md:justify-between md:p-6 bg-gray-900">
+    <span class="text-sm text-gray-500 sm:text-center text-gray-400">© 2022 <a href="https://flowbite.com/"
+                                                                               class="hover:underline">FondationPXN™</a> All Rights Reserved.
     </span>
     <div>
         <span
-            class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Level : 18</span>
-
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : 19</span>
         <span
-            class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Places : 40/46</span>
-
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 40/48</span>
         <span
-            class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Niveau moyen : 62</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 70</span>
     </div>
-    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 text-gray-400 sm:mt-0">
 
         <li>
             <a href="https://discord.gg/kt75BpeqtV" class="mr-4 hover:underline md:mr-6">Discord</a>
         </li>
         <li>
-            <a href="mailto:pamp1n@proton.me" class="hover:underline">Contact</a>
+            <a href="mailto:pamp1n@proton.me" class="mr-4 hover:underline md:mr-6">Contact</a>
         </li>
+        @if (Route::has('login'))
+            @auth
+                <li>
+                    <a href="{{ url('/dashboard') }}" class="hover:underline">Administration</a>
+                </li>
+            @else
+                <li>
+                    <a href="{{ route('login') }}" class="hover:underline">Administration</a>
+                </li>
+            @endauth
+        @endif
     </ul>
 </footer>
 <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>

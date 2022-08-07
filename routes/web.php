@@ -32,5 +32,14 @@ Route::middleware([
 Route::view('/classes', 'classes/classes')->name('classes');
 
 
+
 //astuce
 Route::view('/astuces', 'astuces')->name('astuces');
+
+//wiki
+Route::view('/wiki', 'wiki/wiki')->name('wiki');
+
+Route::view('/mercenaire', 'classes/mercenaire')->name('mercenaire');
+Route::view('/acrobate', 'classes/acrobate')->name('acrobate');
+Route::view('/acolyte', 'classes/acolyte')->name('acolyte');
+Route::view('/magicien', 'classes/magicien')->name('magicien');
