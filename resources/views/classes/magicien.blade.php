@@ -44,27 +44,33 @@
     <div class="flex justify-center mt-6 text-neutral-200">
         <div class="flex flex-col">
             <div class="text-4xl font-bold text-center">La voie du Magicien</div>
+            <div class="text-2xl mt-4 font-bold text-center">Les grandes lignes ...</div>
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mx-64">
+    <div class="grid grid-cols-0 mt-6 md:grid-cols-2 gap-10 md:mx-64 mx-4">
         <div class="flex justify-left my-6 text-neutral-200">
             <div class="flex flex-col">
-                <div class="text-lg mt-6 text-neutral-300">Les magicien sont des DPS très puissant mais faibles en règle
+                <div class="text-lg text-neutral-300">Les Magicien sont des DPS très puissant mais faibles en règle
                     générale.
                 </div>
-                <div class="text-lg text-neutral-300">Ils manient les cinq éléments : Feu -> Vent -> Terre ->
-                    Elecrticité -> Eau ; chacun prenant l'ascendant sur un autre.
+                <div class="text-lg mt-4 text-neutral-300">Le Magicien évoluera en deux classes distinctes au niveau 60 :
+                    Sorcier et Elementaliste.
+                </div>
+                <div class="text-lg mt-4 text-neutral-300">Le Sorcier sera orienté dans du mono-cible, contrairement à
+                    l'Elémentalste qui lui sera orienté dans de l'AOE. (Cela n'est pas une généralité, allez voir les guides <a class="text-indigo-400 underline" href="#">Sorcier</a> & <a class="underline text-blue-500" href="#">Elementaliste</a>)
                 </div>
             </div>
         </div>
-        <div class="flex justify-left my-6 text-neutral-200">
-            <div class="flex flex-row">
-                <img class="w-8 h-8" src="{{asset('img/feu.png')}}">
-                <img src="{{asset('img/vent.png')}}">
-                <img src="{{asset('img/terre.png')}}">
-                <img src="{{asset('img/foudre.png')}}">
-                <img src="{{asset('img/eau.png')}}">
+        <div class="flex justify-center md:my-6 text-neutral-200">
+            <div class="text-lg text-neutral-300">
+                <div class="flex flex-col gap-2">
+                    <p>Ils manient les 5 éléments, chacun prenant l'ascendant sur un autre : </p>
+                    <img class="md:ml-32 ml-16 h-64 w-64" src="{{asset('img/elements.png')}}">
+                    <p></p>
+
+
+                </div>
             </div>
         </div>
     </div>

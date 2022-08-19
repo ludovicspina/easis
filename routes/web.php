@@ -39,6 +39,12 @@ Route::view('/astuces', 'astuces')->name('astuces');
 //wiki
 Route::view('/wiki', 'wiki/wiki')->name('wiki');
 
+//guildes
+Route::view('/guildes', 'guildes')->name('guildes');
+
+//historique
+Route::view('/historique', 'historique')->name('historique');
+
 Route::view('/mercenaire', 'classes/mercenaire')->name('mercenaire');
 Route::view('/acrobate', 'classes/acrobate')->name('acrobate');
 Route::view('/acolyte', 'classes/acolyte')->name('acolyte');

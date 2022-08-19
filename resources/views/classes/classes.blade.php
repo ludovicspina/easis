@@ -31,18 +31,18 @@
     <div class="flex justify-center my-6 text-neutral-200">
         <div class="flex flex-col">
             <div class="text-4xl font-bold text-center">Les différentes classes</div>
-            <div class="text-xl mt-6 text-neutral-300">Voici les quatres différentes voies que vous pouvez choisir dès le niveaux 15.
+            <div class="text-xl text-center mt-6 text-neutral-300">Voici les quatres différentes voies que vous pouvez choisir dès le niveaux 15.
             </div>
         </div>
     </div>
 
     <div class="flex justify-center">
-        <div class="grid grid-cols-2 gap-10">
+        <div class="grid grid-cols-0 md:grid-cols-2 gap-10 mx-4 md:mx-0">
             <a href="{{route('mercenaire')}}"
-               class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+               class="flex items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/blade.png')}}" alt="">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/knight.png')}}" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Voie du Mercenaire</h5>
@@ -50,10 +50,10 @@
                 </div>
             </a>
             <a href="{{route('acrobate')}}"
-               class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+               class="flex items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/jester.png')}}" alt="">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/ranger.png')}}" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Voie de l'Acrobate</h5>
@@ -61,10 +61,10 @@
                 </div>
             </a>
             <a href="{{route('acolyte')}}"
-               class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+               class="flex items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/billposter.png')}}" alt="">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/ringmaster.png')}}" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Voie de l'Acolyte</h5>
@@ -72,10 +72,10 @@
                 </div>
             </a>
             <a href="{{route('magicien')}}"
-               class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+               class="flex items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/psykeeper.png')}}" alt="">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full h-32 w-16 md:h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                      src="{{asset('/img/classes/elementor.png')}}" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Voie du Magicien</h5>

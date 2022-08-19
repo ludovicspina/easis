@@ -17,8 +17,8 @@
 
 <nav class="px-2 py-2 bg-gray-900 border-gray-800">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="#" class="flex items-center">
-            <img src="{{asset('/img/logo-easis.png')}}" class="mr-3 h-6 sm:h-10" alt="Flowbite Logo">
+        <a href="{{ route('home') }}" class="flex items-center">
+            <img src="{{asset('/img/logo-easis.png')}}" class="mr-3 h-6 sm:h-10" alt="Easis Logo">
             <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Easis</span>
         </a>
         <button data-collapse-toggle="navbar-multi-level" type="button"
@@ -34,6 +34,10 @@
         </button>
         <div class="hidden w-full md:block md:w-auto bg-gray-900" id="navbar-multi-level">
             <ul class="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-900 border-gray-700">
+                <!-- <li>
+                    <a href="{{ route('guildes') }}"
+                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Les guildes</a>
+                </li> -->
                 <li>
                     <a href="{{ route('astuces') }}"
                        class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 md:hover:bg-transparent">Astuces</a>
@@ -43,9 +47,13 @@
                        class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Wiki</a>
                 </li>
                 <li>
-                    <a href="{{ route('classes') }}"
-                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Classes</a>
+                    <a href="{{ route('classes') }}" data-tooltip-target="tooltip-hover" data-tooltip-trigger="hover"
+                       class="block py-2 pr-4 pl-3 rounded animate-pulse md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 ">Classes</a>
                 </li>
+                <div id="tooltip-hover" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    En construction ...
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
             </ul>
         </div>
     </div>
@@ -61,11 +69,11 @@
     </span>
     <div>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : 19</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : 26</span>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 40/48</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 40/55</span>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 70</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 72</span>
     </div>
     <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 text-gray-400 sm:mt-0">
 
