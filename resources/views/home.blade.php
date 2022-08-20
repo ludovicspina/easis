@@ -89,7 +89,7 @@
                             <p class="text-base leading-relaxed text-gray-300">
                                 - Hotfix responsive (accès mobile)</p>
                             <p class="text-base leading-relaxed text-gray-300">
-                                - Avancement de la page <a class="underline text-blue-400" href="{{ route('magicien') }}">Magicien</a></p>
+                                - Fin de la page <a class="underline text-blue-400" href="{{ route('magicien') }}">Magicien</a></p>
                             <p class="text-base leading-relaxed text-gray-300">
                                 - Création de cette modale de mise à jour</p>
                         </div>
