@@ -38,6 +38,10 @@
                     <a href="{{ route('guildes') }}"
                        class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Les guildes</a>
                 </li> -->
+                    <li>
+                        <a href="{{ route('contribution') }}"
+                           class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">XP de Guilde</a>
+                    </li>
                 <li>
                     <a href="{{ route('astuces') }}"
                        class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 md:hover:bg-transparent">Astuces</a>
@@ -69,9 +73,9 @@
     </span>
     <div>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : 26</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : 28</span>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 40/55</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 46/58</span>
         <span
             class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 72</span>
     </div>

@@ -45,6 +45,9 @@ Route::view('/guildes', 'guildes')->name('guildes');
 //historique
 Route::view('/historique', 'historique')->name('historique');
 
+//contribution
+Route::view('/contribution', 'contribution')->name('contribution');
+
 Route::view('/mercenaire', 'classes/mercenaire')->name('mercenaire');
 Route::view('/acrobate', 'classes/acrobate')->name('acrobate');
 Route::view('/acolyte', 'classes/acolyte')->name('acolyte');
