@@ -14,16 +14,6 @@
 
 <body class="antialiased bg-gray-800">
 
-@if(session('status'))
-    <div class="flex p-4 mb-4 fixed m-4 opacity-50 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
-        <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-        <span class="sr-only">Info</span>
-        <div>
-            <span class="font-medium">{{ session('status') }}</span>
-        </div>
-    </div>
-@endif
-
 <nav class="px-2 py-2 bg-gray-900 border-gray-800">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="{{ route('home') }}" class="flex items-center">
@@ -91,9 +81,9 @@
     <div>
         <span
             class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : <span
-                class="text-green-500">36</span></span>
+                class="text-green-500">37</span></span>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 58/64</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 59/65</span>
         <span
             class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 85</span>
     </div>
