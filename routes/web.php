@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\CdgController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BackPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,19 +20,15 @@ Route::get('/', function () {
 
 Route::view('/', 'home')->name('home');;
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::view('/dashboard', 'dashboard')->name('dashboard');;
+
+
+
+Route::get('dashboard', [CdgController::class, 'index']);
+Route::post('cdgAdd', [CdgController::class, 'store'])->name('cdgAdd');
+
 // classes
 Route::view('/classes', 'classes/classes')->name('classes');
-
-
 
 //astuce
 Route::view('/astuces', 'astuces')->name('astuces');
@@ -55,4 +51,4 @@ Route::view('/acolyte', 'classes/acolyte')->name('acolyte');
 Route::view('/magicien', 'classes/magicien')->name('magicien');
 
 
-Route::resource('posts', BackPostController::class)->except('show');
+

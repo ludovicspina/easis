@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cdg_stuffs', function (Blueprint $table) {
+        Schema::create('cdgs', function (Blueprint $table) {
             $table->id();
-            $table->string("item");
-            $table->string("joueurChoisi");
+            $table->string('objet');
+            $table->string('joueur');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cdg_stuffs');
+        Schema::dropIfExists('cdgs');
     }
 };

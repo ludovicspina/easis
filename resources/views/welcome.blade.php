@@ -32,6 +32,8 @@
                       clip-rule="evenodd"></path>
             </svg>
         </button>
+
+
         <div class="hidden w-full md:block md:w-auto bg-gray-900" id="navbar-multi-level">
             <ul class="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-900 border-gray-700">
             <!-- <li>
@@ -90,16 +92,21 @@
         <li>
             <a href="mailto:pamp1n@proton.me" class="mr-4 hover:underline md:mr-6">Contact</a>
         </li>
-        @if (Route::has('login'))
-            @auth
-                <li>
-                    <a href="{{ url('/dashboard') }}" class="hover:underline">Administration</a>
-                </li>
-            @else
-                <li>
-                    <a href="{{ route('login') }}" class="hover:underline">Administration</a>
-                </li>
-            @endauth
+        @if(!Auth::user())
+            <li>
+                <a href="{{ route('login') }}" class="hover:underline">Se connecter</a>
+            </li>
+        @else
+
+            <li>
+                <form action="{{ route('logout') }}" class="rounded-b" method="POST">
+                    @csrf
+                    <button type="submit"
+                            class="hover:underline">
+                        Se déconnecter
+                    </button>
+                </form>
+            </li>
         @endif
     </ul>
 </footer>
