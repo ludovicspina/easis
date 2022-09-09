@@ -18,13 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::view('/', 'home')->name('home');;
-
-Route::view('/dashboard', 'dashboard')->name('dashboard');;
+Route::view('/', 'home')->name('home');
 
 
-
-Route::get('dashboard', [CdgController::class, 'index']);
+Route::get('/cdgArchives', [CdgController::class, 'index'])->name('cdgArchives');;
 Route::post('cdgAdd', [CdgController::class, 'store'])->name('cdgAdd');
 
 // classes
