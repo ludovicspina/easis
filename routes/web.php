@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BackPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,6 @@ Route::view('/mercenaire', 'classes/mercenaire')->name('mercenaire');
 Route::view('/acrobate', 'classes/acrobate')->name('acrobate');
 Route::view('/acolyte', 'classes/acolyte')->name('acolyte');
 Route::view('/magicien', 'classes/magicien')->name('magicien');
+
+
+Route::resource('posts', BackPostController::class)->except('show');

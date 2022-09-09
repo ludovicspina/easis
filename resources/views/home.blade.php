@@ -20,13 +20,13 @@
         </div>
         </div>
         <div class="flex justify-center mt-10 md:visible">
-            <div class="px-5 py-2 w-40 rounded-lg border shadow-md bg-gray-700 border-gray-600">
+            <div class="px-5 py-2 w-40 rounded-lg shadow-xl border shadow-md bg-gray-700 border-gray-600">
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-800">
                         <li class="py-3">
                             <div class="flex items-center space-x-4">
                                 <div class="flex-1 min-w-0">
-                                    <p class="text-sm font-medium truncate text-white">
+                                    <p class="text-sm font-medium truncate text-white0">
                                         Azatyss & pamp1n
                                     </p>
                                     <p class="text-sm truncate text-gray-400">
@@ -61,7 +61,7 @@
 
             <div class="mt-4 flex justify-center">
                 <button type="button"
-                        class="text-white text-xl md:text-2xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                        class="text-white text-xl md:text-2xl bg-gradient-to-r shadow-lg shadow-blue-500/50 from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     <a href="https://discord.gg/kt75BpeqtV">Discord</a>
                 </button>
             </div>
