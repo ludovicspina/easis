@@ -120,16 +120,19 @@
                 left: 0;
                 right: 0;
             }
+
             .autocomplete-items div {
                 padding: 10px;
                 cursor: pointer;
                 background-color: #fff;
                 border-bottom: 1px solid #d4d4d4;
             }
+
             .autocomplete-items div:hover {
                 /*when hovering an item:*/
                 background-color: #e9e9e9;
             }
+
             .autocomplete-active {
                 /*when navigating through the items using the arrow keys:*/
                 background-color: DodgerBlue !important;
@@ -138,17 +141,35 @@
 
         <script>
 
-            var itemList = {!! json_encode($itemsJson) !!};
-            var itemNames = [];
+
+            var clockItemList = {!! json_encode($clockItemsJson) !!};
+
+            var meteoItemList = {!! json_encode($meteoItemsJson) !!};
 
             var cdg = {!! json_encode($cdgIteration) !!};
             var joueurs = [];
 
-            itemList.forEach(element => itemNames.push(element.name.fr));
+            cNames= [];
+            mNames= [];
+
+            clockItemList.forEach(element => cNames.push(element.name.fr));
+            meteoItemList.forEach(element => mNames.push(element.name.fr));
+
+            let itemNames = [];
+
+            for(let i=0;i<cNames.length;i++){
+                if(itemNames.indexOf(cNames[i]) == -1)
+                    itemNames.push(cNames[i])
+            }
+            for(let i=0;i<mNames.length;i++){
+                if(itemNames.indexOf(mNames[i]) == -1)
+                    itemNames.push(mNames[i])
+            }
+
+
+
             cdg.forEach(element => joueurs.push(element.joueur));
 
-
-            console.log(itemNames);
 
             function autocomplete(inp, arr) {
                 /*the autocomplete function takes two arguments,
