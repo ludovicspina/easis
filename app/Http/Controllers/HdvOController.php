@@ -13,9 +13,11 @@ class HdvOController extends Controller
     {
         $hdvO = HdvO::select('*')
             ->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())
+            ->orderBy('count', 'ASC')
             ->get();
         $hdvR = HdvR::select('*')
             ->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())
+            ->orderBy('count', 'ASC')
             ->get();
 
 
@@ -32,5 +34,10 @@ class HdvOController extends Controller
         $post->save();
 
         return redirect('hdv')->with('status', 'Archive ajoutée.');
+    }
+
+    public function remove($id) {
+        HdvO::delete('delete from hdv_o_s where id = ?',[$id]);
+        return redirect('hdv');
     }
 }
