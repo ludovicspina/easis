@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\HdvR;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class HdvRController extends Controller
 {
     public function index()
     {
-        $hdvR = HdvR::all();
-
-
-        return view('hdv', compact('hdvR'));
     }
 
     public function store(Request $request)
