@@ -18,6 +18,8 @@ class HdvRController extends Controller
         $post->objetRecherche = $request->input('objetRecherche');
         $post->joueurRecherche = $request->input('joueurRecherche');
         $post->prixRecherche = $request->input('prixRecherche');
+        $post->quantiteRecherche = $request->input('quantiteRecherche');
+
         $post->save();
 
         return redirect('hdv')->with('status', 'Archive ajoutée.');

@@ -31,6 +31,13 @@
                                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Objet à vendre</label>
                         </div>
                         <div class="relative z-0 mb-6 w-48 group">
+                            <input type="number" name="quantiteOffre" id="quantiteOffre"
+                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                   placeholder=" " required/>
+                            <label for="floating_first_name"
+                                   class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Quantité</label>
+                        </div>
+                        <div class="relative z-0 mb-6 w-48 group">
                             <input type="number" name="prixOffre" id="prixOffre"
                                    class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                    placeholder=" " required/>
@@ -55,7 +62,10 @@
                             Objet
                         </th>
                         <th scope="col" class="py-3 px-6 text-center">
-                            prix
+                            Prix / Unité
+                        </th>
+                        <th scope="col" class="py-3 px-6 text-center">
+                            Quantité
                         </th>
                         <th scope="col" class="py-3 px-6 text-center">
                             Joueur
@@ -66,7 +76,8 @@
                     @foreach($hdvO as $item)
                         <tr class="bg-white border-b bg-gray-800 border-gray-700">
                             <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->objetOffre }}</td>
-                            <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->prixOffre }}</td>
+                            <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ number_format($item->prixOffre) }}</td>
+                            <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->quantiteOffre }}</td>
                             <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->joueurOffre }}</td>
                         </tr>
                     @endforeach
@@ -101,6 +112,13 @@
                             <label for="floating_first_name"
                                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Prix</label>
                         </div>
+                        <div class="relative z-0 mb-6 w-48 group">
+                            <input type="number" name="quantiteRecherche" id="quantiteRecherche"
+                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                   placeholder=" " required/>
+                            <label for="floating_first_name"
+                                   class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Quantité</label>
+                        </div>
                     </div>
                     <button type="submit"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
@@ -119,7 +137,10 @@
                             Objet
                         </th>
                         <th scope="col" class="py-3 px-6 text-center">
-                            prix
+                            Prix / Unité
+                        </th>
+                        <th scope="col" class="py-3 px-6 text-center">
+                            Quantité
                         </th>
                         <th scope="col" class="py-3 px-6 text-center">
                             Joueur
@@ -130,7 +151,8 @@
                     @foreach($hdvR as $item)
                         <tr class="bg-white border-b bg-gray-800 border-gray-700">
                             <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->objetRecherche }}</td>
-                            <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->prixRecherche }}</td>
+                            <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ number_format($item->prixRecherche) }}</td>
+                            <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->quantiteRecherche }}</td>
                             <td class="h-4 font-medium text-gray-300 bg-gray-800 text-center">{{ $item->joueurRecherche }}</td>
                         </tr>
                     @endforeach
@@ -139,5 +161,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        numberO =
+
+        function numberWithSpaces(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+    </script>
 
 @stop

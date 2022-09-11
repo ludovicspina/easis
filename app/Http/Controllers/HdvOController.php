@@ -28,6 +28,7 @@ class HdvOController extends Controller
         $post->objetOffre = $request->input('objetOffre');
         $post->joueurOffre = $request->input('joueurOffre');
         $post->prixOffre = $request->input('prixOffre');
+        $post->quantiteOffre = $request->input('quantiteOffre');
         $post->save();
 
         return redirect('hdv')->with('status', 'Archive ajoutée.');
