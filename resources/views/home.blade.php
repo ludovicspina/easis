@@ -20,7 +20,7 @@
         </div>
         </div>
         <div class="flex justify-center mt-10 md:visible">
-            <div class="px-5 py-2 w-40 rounded-lg shadow-xl border shadow-md bg-gray-700 border-gray-600">
+            <div class="px-5 py-2 w-48 rounded-lg shadow-xl border shadow-md bg-gray-700 border-gray-600">
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-800">
                         <li class="py-3">
@@ -39,10 +39,10 @@
                             <div class="flex items-center space-x-4">
                                 <div class="flex-1 min-w-0">
                                     <p class="text-sm font-medium truncate text-white">
-                                        Dewylia
+                                        Dewylia & Ethalides
                                     </p>
                                     <p class="text-sm truncate text-gray-400">
-                                        Officier
+                                        Officiers
                                     </p>
                                 </div>
                             </div>

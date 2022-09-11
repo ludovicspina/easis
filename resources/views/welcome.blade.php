@@ -12,7 +12,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Select2 -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- Fonts -->
@@ -49,10 +49,17 @@
                        class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Les guildes</a>
                 </li> -->
                 <li>
-                    <a href="{{ route('cdgArchives') }}"
-                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Archives
-                        CDG</a>
+                    <a href="{{ route('hdv') }}"
+                       class="block py-2 pr-4 mr-16 animate-bounce pl-3 rounded hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">→
+                        Hotel de vente ←</a>
                 </li>
+                @if(Auth::user())
+                    <li>
+                        <a href="{{ route('cdgArchives') }}"
+                           class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Archives
+                            CDG</a>
+                    </li>
+                @endif
                 <li>
                     <a href="{{ route('contribution') }}"
                        class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">XP
@@ -91,11 +98,11 @@
     <div>
         <span
             class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : <span
-                class="text-green-500">37</span></span>
+                class="text-green-500">38</span></span>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 59/65</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 61/66</span>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 85</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 88</span>
     </div>
     <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 text-gray-400 sm:mt-0">
 
