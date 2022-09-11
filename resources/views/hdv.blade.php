@@ -9,13 +9,13 @@
 
 
 
-    <div class="grid grid-cols-2">
-        <div class="mx-16 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="md:mx-16 mt-8">
             <div class="flex justify-center">
                 <form autocomplete="off" action="{{ route('hdvOAdd') }}" class="w-auto mt-4" method="POST">
                     @csrf
                     <div class="underline text-2xl text-center text-gray-300">Je vend un objet</div>
-                    <div class="md:gap-6 mt-8 flex">
+                    <div class="md:gap-6 mt-8 md:flex">
                         <div class="relative z-0 mb-6 w-48 group">
                             <input type="text" name="joueurOffre" id="joueurOffre"
                                    class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -46,15 +46,15 @@
                         </div>
                     </div>
                     <button type="submit"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-64 md:w-full sm:w-auto px-5 py-2.5 text-center">
                         Valider
                     </button>
                 </form>
             </div>
             <div>
-                <table class="text-sm text-left text-gray-400 w-full mx-4">
-                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 h-16 mt-6">
-                        <p class="mt-1 text-xl font-normal text-center text-gray-300">Liste des objets qui sont actuellement en vente.</p>
+                <table class="text-sm text-left text-gray-400 w-full md:mx-4">
+                    <caption class="p-5 mb-8 md:mb-0 text-lg font-semibold text-left text-gray-900 h-16 mt-6">
+                        <p class="mt-1 md:text-xl font-normal text-center text-gray-300">Liste des objets qui sont actuellement en vente.</p>
                     </caption>
                     <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                     <tr>
@@ -85,12 +85,12 @@
                 </table>
             </div>
         </div>
-        <div class="mx-16 mt-8">
+        <div class="md:mx-16 mt-8">
             <div class="flex justify-center">
                 <form autocomplete="off" action="{{ route('hdvRAdd') }}" class="w-auto mt-4" method="POST">
                     @csrf
                     <div class="underline text-2xl text-center text-gray-300">Je recherche un objet</div>
-                    <div class="md:gap-6 mt-8 flex">
+                    <div class="md:gap-6 mt-8 md:flex">
                         <div class="relative z-0 mb-6 w-48 group">
                             <input type="text" name="joueurRecherche" id="joueurRecherche"
                                    class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -127,9 +127,9 @@
                 </form>
             </div>
             <div>
-                <table class="text-sm text-left text-gray-400 w-full mx-4">
-                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 h-16 mt-6">
-                        <p class="mt-1 text-xl font-normal text-center text-gray-300">Liste des objets qui sont actuellement recherchés.</p>
+                <table class="text-sm text-left text-gray-400 w-full md:mx-4">
+                    <caption class="p-5 mb-8 md:mb-0 text-lg font-semibold text-left text-gray-900 h-16 mt-6">
+                        <p class="mt-1 md:text-xl font-normal text-center text-gray-300">Liste des objets qui sont actuellement recherchés.</p>
                     </caption>
                     <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                     <tr>
