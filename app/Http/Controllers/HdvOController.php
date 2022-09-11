@@ -13,11 +13,11 @@ class HdvOController extends Controller
     {
         $hdvO = HdvO::select('*')
             ->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())
-            ->orderBy('created_at', 'ASC')
+            ->orderBy('created_at', 'DESC')
             ->get();
         $hdvR = HdvR::select('*')
             ->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())
-            ->orderBy('created_at', 'ASC')
+            ->orderBy('created_at', 'DESC')
             ->get();
 
 
