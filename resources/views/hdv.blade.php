@@ -3,6 +3,7 @@
 
 
     <div class="text-2xl text-center text-gray-300 mt-6 underline">Toutes les offres disparaissent automatiquement au bout de 24h.</div>
+    <div class="text-xl text-center text-gray-300 mt-4 underline">HDV Genèse.</div>
     <div class="text-center text-gray-300 mt-3">Ce site est acceccible à tous, si vous ne le respectez pas il disparaîtra rapidement.</div>
     <div class="text-center text-gray-300 mt-1">Soyez respectueux et ayez du savoir vivre.</div>
     <div class="text-center text-gray-300 mt-2">Pour toute réclamation/idée/proposition contactez moi sur discord : pamp1n#7133</div>
