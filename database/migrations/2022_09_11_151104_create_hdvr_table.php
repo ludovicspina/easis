@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hdvr', function (Blueprint $table) {
+        Schema::create('hdv_r_s', function (Blueprint $table) {
             $table->id();
             $table->string('objetRecherche');
             $table->string('joueurRecherche');

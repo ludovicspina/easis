@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hdvo', function (Blueprint $table) {
+        Schema::create('hdv_o_s', function (Blueprint $table) {
             $table->id();
             $table->string('objetOffre');
             $table->string('joueurOffre');
