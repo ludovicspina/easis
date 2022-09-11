@@ -21,6 +21,16 @@
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css"/>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DN05ZB8MGM"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DN05ZB8MGM');
+</script>
+
 <body class="antialiased bg-gray-800">
 
 <nav class="px-2 py-2 bg-gray-900 border-gray-800">
