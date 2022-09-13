@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\CdgController;
-use App\Http\Controllers\HdvOController;
-use App\Http\Controllers\HdvRController;
+use App\Http\Controllers\HdvController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,13 +22,14 @@ Route::get('/', function () {
 Route::view('/', 'home')->name('home');
 
 
-Route::get('/hdv', [HdvOController::class, 'index'])->name('hdv');
-Route::post('hdvORemove', [HdvOController::class, 'remove'])->name('hdvORemove');
-Route::post('hdvOAdd', [HdvOController::class, 'store'])->name('hdvOAdd');
-Route::post('hdvRAdd', [HdvRController::class, 'store'])->name('hdvRAdd');
+Route::get('/hdv', [HdvController::class, 'index'])->name('hdv');
+Route::post('hdvAdd', [HdvController::class, 'store'])->name('hdvAdd');
+
 
 Route::get('/cdgArchives', [CdgController::class, 'index'])->name('cdgArchives');
 Route::post('cdgAdd', [CdgController::class, 'store'])->name('cdgAdd');
+
+
 
 // classes
 Route::view('/classes', 'classes/classes')->name('classes');
