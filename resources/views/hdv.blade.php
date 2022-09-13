@@ -338,7 +338,8 @@
             <div class="text-2xl text-center text-gray-300 mt-6 underline">Alle Angebote verschwinden
                 automatisch nach 24 Stunden.
             </div>
-            <div class="text-center text-gray-300 mt-3">Diese Seite ist für alle zugänglich, wenn Sie sie nicht respektieren
+            <div class="text-center text-gray-300 mt-3">Diese Seite ist für alle zugänglich, wenn Sie sie nicht
+                respektieren
                 wird schnell verschwinden.
             </div>
             <div class="text-center text-gray-300 mt-1">Sei respektvoll und weiß, wie man lebt.</div>
@@ -355,8 +356,9 @@
                                 <input checked type="radio" value="1" name="typeRequete"
                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 <label for="default-radio-1"
-                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Je vend un
-                                    objet</label>
+                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ich verkaufe
+                                    ein
+                                    Objekt</label>
                             </div>
                             <div>
                                 <input type="radio" value="0" name="typeRequete"

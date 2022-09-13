@@ -108,9 +108,9 @@
     <div>
         <span
             class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Level : <span
-                class="text-green-500">38</span></span>
+                class="text-green-500">39</span></span>
         <span
-            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 61/66</span>
+            class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Places : 61/68</span>
         <span
             class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">Niveau moyen : 88</span>
     </div>
