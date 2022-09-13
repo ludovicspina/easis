@@ -5,12 +5,12 @@
 
 
 
-    <div class="mb-4 flex justify-center mx-10 border-b border-gray-700">
-        <ul class="flex flex-wrap -mb-px text-xl font-medium text-center" id="myTab" data-tabs-toggle="#serverTab"
+    <div class="mb-4 flex justify-center mx-10 md:border-b border-gray-700">
+        <ul class="md:flex md:flex-wrap -mb-px text-xl font-medium text-center" id="myTab" data-tabs-toggle="#serverTab"
             role="tablist">
             <li class="mr-2" role="presentation">
                 <button
-                    class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                    class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-300"
                     id="genese-tab" data-tabs-target="#genese" type="button" role="tab" aria-controls="genese"
                     aria-selected="false">Genese
                 </button>
@@ -24,7 +24,7 @@
             </li>
             <li class="mr-2" role="presentation">
                 <button
-                    class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                    class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-300"
                     id="burudeng-tab" data-tabs-target="#burudeng" type="button" role="tab" aria-controls="burudeng"
                     aria-selected="false">Burudeng
                 </button>
@@ -45,7 +45,7 @@
                 discord : pamp1n#7133
             </div>
 
-            <div class="grid grid-cols-8 gap-2">
+            <div class="md:grid md:grid-cols-8 gap-2">
                 <form autocomplete="off" action="{{ route('hdvAdd') }}" class="col-span-1 w-auto mt-4" method="POST">
                     @csrf
                     <div class="mt-8 md:flex md:flex-col">
@@ -101,7 +101,7 @@
                     </div>
                     <button type="submit"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-80 sm:w-auto px-5 py-2.5 text-center">
-                        Done
+                        Valider
                     </button>
                 </form>
                 <div class="col-span-3">
@@ -196,7 +196,7 @@
                 pamp1n#7133
             </div>
 
-            <div class="grid grid-cols-8 gap-2">
+            <div class="md:grid md:grid-cols-8 gap-2">
                 <form autocomplete="off" action="{{ route('hdvAdd') }}" class="col-span-1 w-auto mt-4" method="POST">
                     @csrf
                     <div class="mt-8 md:flex md:flex-col">
@@ -252,7 +252,7 @@
                     </div>
                     <button type="submit"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-80 sm:w-auto px-5 py-2.5 text-center">
-                        Valider
+                        Done
                     </button>
                 </form>
                 <div class="col-span-3">
@@ -346,7 +346,7 @@
                 Zwietracht: pamp1n#7133
             </div>
 
-            <div class="grid grid-cols-8 gap-2">
+            <div class="md:grid md:grid-cols-8 gap-2">
                 <form autocomplete="off" action="{{ route('hdvAdd') }}" class="col-span-1 w-auto mt-4" method="POST">
                     @csrf
                     <div class="mt-8 md:flex md:flex-col">
