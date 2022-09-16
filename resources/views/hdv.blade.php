@@ -32,7 +32,7 @@
         </ul>
     </div>
     <div id="serverTab">
-        <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="genese" role="tabpanel"
+        <div class="hidden p-4 bg-gray-50 rounded-lg  bg-gray-800" id="genese" role="tabpanel"
              aria-labelledby="genese-tab">
             <div class="text-2xl text-center text-gray-300 mt-6 underline">Toutes les offres disparaissent
                 automatiquement au bout de 24h.
@@ -52,16 +52,16 @@
                         <div class="flex flex-col mb-4">
                             <div>
                                 <input checked type="radio" value="1" name="typeRequete"
-                                       class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
                                 <label for="default-radio-1"
-                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Je vend un
+                                       class="ml-2 text-sm font-medium text-gray-300">Je vend un
                                     objet</label>
                             </div>
                             <div>
                                 <input type="radio" value="0" name="typeRequete"
-                                       class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
                                 <label for="default-radio-2"
-                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Je recherche un
+                                       class="ml-2 text-sm font-medium text-gray-300">Je recherche un
                                     objet</label>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
             </div>
 
         </div>
-        <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="totemia" role="tabpanel"
+        <div class="hidden p-4 rounded-lg bg-gray-800" id="totemia" role="tabpanel"
              aria-labelledby="totemia-tab">
             <div class="text-2xl text-center text-gray-300 mt-6 underline">All offers disappear automatically after 24
                 hours.
@@ -203,16 +203,16 @@
                         <div class="flex flex-col mb-4">
                             <div>
                                 <input checked type="radio" value="1" name="typeRequete"
-                                       class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
                                 <label for="default-radio-1"
-                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I sell an
+                                       class="ml-2 text-sm font-medium text-gray-300">I sell an
                                     item</label>
                             </div>
                             <div>
                                 <input type="radio" value="0" name="typeRequete"
-                                       class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
                                 <label for="default-radio-2"
-                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                       class="ml-2 text-sm font-medium text-gray-300">
                                     I'm looking for a item</label>
                             </div>
                         </div>
@@ -333,7 +333,7 @@
                 </div>
             </div>
         </div>
-        <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="burudeng" role="tabpanel"
+        <div class="hidden p-4 rounded-lg bg-gray-800" id="burudeng" role="tabpanel"
              aria-labelledby="burudeng-tab">
             <div class="text-2xl text-center text-gray-300 mt-6 underline">Alle Angebote verschwinden
                 automatisch nach 24 Stunden.
@@ -354,17 +354,17 @@
                         <div class="flex flex-col mb-4">
                             <div>
                                 <input checked type="radio" value="1" name="typeRequete"
-                                       class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
                                 <label for="default-radio-1"
-                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ich verkaufe
+                                       class="ml-2 text-sm font-medium text-gray-300">Ich verkaufe
                                     ein
                                     Objekt</label>
                             </div>
                             <div>
                                 <input type="radio" value="0" name="typeRequete"
-                                       class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
                                 <label for="default-radio-2"
-                                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ich suche eine
+                                       class="ml-2 text-sm font-medium text-gray-900 text-gray-300">Ich suche eine
                                     Objekt</label>
                             </div>
                         </div>
