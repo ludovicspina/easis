@@ -1,6 +1,5 @@
 @extends('welcome')
 @section('content')
-
     <nav class="flex justify-center mt-1" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <li class="inline-flex items-center">
@@ -60,7 +59,7 @@
     </div>
 
     <div id="serverTab">
-        <div class="hidden p-4 rounded-lg bg-gray-800" id="genese" role="tabpanel"
+        <div class="hidden p-4 rounded-lg" id="genese" role="tabpanel"
              aria-labelledby="genese-tab">
 
             <!-- Main modal -->
@@ -68,7 +67,7 @@
                  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-auto md:inset-0 h-modal md:h-full">
                 <div class="relative p-4 h-full md:h-auto">
                     <!-- Modal content -->
-                    <div class="relative rounded-lg shadow backdrop-blur-xl bg-blue-900 bg-opacity-10">
+                    <div class="relative rounded-lg shadow backdrop-blur-xl bg-opacity-10">
                         <button type="button"
                                 class="absolute top-3 right-2.5 text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-800 hover:text-white"
                                 data-modal-toggle="add-item-g">
@@ -311,7 +310,8 @@
                                                     <h3 class="font-semibold text-gray-900 dark:text-white">{{ $item->objet }}@if($item->niveau !== null)
                                                             + {{ $item->niveau }} @endif</h3>
                                                 </div>
-                                                <div class="flex px-2 py-1 gap-4 w-64 text-base border-b border-gray-600">
+                                                <div
+                                                    class="flex px-2 py-1 gap-4 w-64 text-base border-b border-gray-600">
                                                     @if($item->for !== null)
                                                         <p class="text-green-400">FOR+{{ $item->for }}</p>
                                                     @endif
