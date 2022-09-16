@@ -28,6 +28,18 @@ class HdvController extends Controller
         $post->typeRequete = $request->input('typeRequete');
         $post->region = $request->input('region');
         $post->serveur = $request->input('serveur');
+        $post->for = $request->input('for');
+        $post->end = $request->input('end');
+        $post->dex = $request->input('dex');
+        $post->int = $request->input('int');
+        $post->eveil = $request->input('eveil');
+        $post->niveau = $request->input('niveau');
+        $post->eau = $request->input('eau');
+        $post->feu = $request->input('feu');
+        $post->terre = $request->input('terre');
+        $post->foudre = $request->input('foudre');
+        $post->vent = $request->input('vent');
+
 
         $post->save();
 
