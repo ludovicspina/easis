@@ -32,7 +32,7 @@
         </ul>
     </div>
     <div id="serverTab">
-        <div class="hidden p-4 bg-gray-50 rounded-lg  bg-gray-800" id="genese" role="tabpanel"
+        <div class="hidden p-4 rounded-lg  bg-gray-800" id="genese" role="tabpanel"
              aria-labelledby="genese-tab">
             <div class="text-2xl text-center text-gray-300 mt-6 underline">Toutes les offres disparaissent
                 automatiquement au bout de 24h.

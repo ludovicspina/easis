@@ -60,7 +60,7 @@
                 </li> -->
                 <li>
                     <a href="{{ route('hdv') }}"
-                       class="block py-2 pr-4 mr-16 animate-bounce pl-3 rounded hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">→
+                       class="block py-2 pr-4 mr-16 animate-bounce pl-3 rounded hover:bg-gray-70 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">→
                         Hotel de vente ←</a>
                 </li>
                 @if(Auth::user())
