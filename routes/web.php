@@ -29,7 +29,8 @@ Route::post('hdvAdd', [HdvController::class, 'store'])->name('hdvAdd');
 Route::get('/cdgArchives', [CdgController::class, 'index'])->name('cdgArchives');
 Route::post('cdgAdd', [CdgController::class, 'store'])->name('cdgAdd');
 
-
+// membres
+Route::view('/membres', 'membres')->name('membres');
 
 // classes
 Route::view('/classes', 'classes/classes')->name('classes');

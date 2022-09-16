@@ -19,7 +19,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DN05ZB8MGM"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-DN05ZB8MGM');
@@ -60,8 +64,7 @@
                 </li> -->
                 <li>
                     <a href="{{ route('hdv') }}"
-                       class="block py-2 pr-4 mr-16 animate-bounce pl-3 rounded hover:bg-gray-70 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">→
-                        Hotel de vente ←</a>
+                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Hotel de vente</a>
                 </li>
                 @if(Auth::user())
                     <li>
@@ -76,6 +79,11 @@
                         de Guilde</a>
                 </li>
                 <li>
+                    <a href="{{ route('membres') }}"
+                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Membres</a>
+                </li>
+                <!--
+                <li>
                     <a href="{{ route('astuces') }}"
                        class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 md:hover:bg-transparent">Astuces</a>
                 </li>
@@ -87,6 +95,7 @@
                     <a href="{{ route('classes') }}" data-tooltip-target="tooltip-hover" data-tooltip-trigger="hover"
                        class="block py-2 pr-4 pl-3 rounded animate-pulse md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 ">Classes</a>
                 </li>
+                -->
                 <div id="tooltip-hover" role="tooltip"
                      class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                     En construction ...
@@ -101,7 +110,7 @@
 @show
 <div class="mt-32"></div>
 <footer
-    class="p-4 inset-x-0 bottom-0 fixed shadow md:flex md:items-center md:justify-between md:p-6 bg-gray-900">
+    class="p-4 inset-x-0 bottom-0 md:fixed shadow md:flex md:items-center md:justify-between md:p-6 bg-gray-900">
     <span class="text-sm text-gray-500 sm:text-center text-gray-400">© 2022 <a href="#"
                                                                                class="hover:underline">FondationPXN™</a> All Rights Reserved.
     </span>
