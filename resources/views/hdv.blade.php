@@ -307,11 +307,11 @@
                                             <div data-popover id="{{ $item->id }}" role="tooltip"
                                                  class="popover__content inline-block absolute z-10 text-sm font-light rounded-lg border shadow-sm opacity-0 transition-opacity duration-300 text-gray-400 border-gray-600 bg-gray-800">
                                                 <div
-                                                    class="py-2 px-3 bg-gray-100 rounded-t-lg border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700">
+                                                    class="py-2 px-3 bg-gray-100 w-64 rounded-t-lg border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700">
                                                     <h3 class="font-semibold text-gray-900 dark:text-white">{{ $item->objet }}@if($item->niveau !== null)
                                                             + {{ $item->niveau }} @endif</h3>
                                                 </div>
-                                                <div class="flex px-2 py-1 gap-4 text-base border-b border-gray-600">
+                                                <div class="flex px-2 py-1 gap-4 w-64 text-base border-b border-gray-600">
                                                     @if($item->for !== null)
                                                         <p class="text-green-400">FOR+{{ $item->for }}</p>
                                                     @endif
@@ -325,7 +325,7 @@
                                                         <p class="text-magenta-400">INT+{{ $item->int }}</p>
                                                     @endif
                                                 </div>
-                                                <div class="flex px-2 py-1 gap-4 text-base">
+                                                <div class="flex px-2 py-1 gap-4 w-64 text-base">
                                                     @if($item->eau !== null)
                                                         <p class="text-blue-500">Eau+{{ $item->eau }}</p>
                                                     @endif
@@ -343,7 +343,7 @@
                                                     @endif
                                                 </div>
                                                 @if($item->eveil !== null)
-                                                    <div class="flex px-2 py-1 gap-4 text-base">
+                                                    <div class="flex px-2 py-1 gap-4 w-64 text-base">
                                                         <p class="text-purple-400">Eveil : {{ $item->eveil }}</p>
                                                     </div>
                                                 @endif
