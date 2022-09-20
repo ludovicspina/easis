@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Hdv;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 
 class HdvController extends Controller
 {
     public function index()
     {
         $hdv = Hdv::select('*')
-            ->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())
+            ->where('isShowed', '=', 1)
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return view('hdv',  compact('hdv'));
+        return view('hdv', compact('hdv'));
     }
 
     public function store(Request $request)
@@ -39,10 +38,21 @@ class HdvController extends Controller
         $post->terre = $request->input('terre');
         $post->foudre = $request->input('foudre');
         $post->vent = $request->input('vent');
+        $post->userId = $request->input('userId');
 
 
         $post->save();
 
         return redirect('hdv')->with('status', 'Archive ajoutée.');
+    }
+
+    public function hide($id)
+    {
+        $request = Hdv::find($id);
+
+        $request->isShowed = False;
+        $request->save();
+
+        return redirect('hdv')->with('status', 'Archive supprimée.');
     }
 }

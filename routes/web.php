@@ -24,6 +24,7 @@ Route::view('/', 'home')->name('home');
 
 Route::get('/hdv', [HdvController::class, 'index'])->name('hdv');
 Route::post('hdvAdd', [HdvController::class, 'store'])->name('hdvAdd');
+Route::put('hdvRemove/{id}', [HdvController::class, 'hide'])->name('hdvRemove');
 
 
 Route::get('/cdgArchives', [CdgController::class, 'index'])->name('cdgArchives');

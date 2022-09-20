@@ -83,8 +83,6 @@
                         </svg>
                     </div>
                     <div class="text-gray-100 text-md text-center mt-4">Accéder à l'hôtel de vente</div>
-                    <div class="text-gray-100 text-md text-center">Access to the auction house</div>
-                    <div class="text-gray-100 text-md text-center">Zugang zum Auktionshaus</div>
                 </div>
             </a>
             <a href="{{ route('contribution') }}" class="flex justify-center mt-4">
@@ -99,8 +97,6 @@
                         </svg>
                     </div>
                     <div class="text-gray-100 text-md text-center mt-4">Voir les statistiques de guilde</div>
-                    <div class="text-gray-100 text-md text-center">View Guild Stats</div>
-                    <div class="text-gray-100 text-md text-center">Gildenstatistik anzeigen</div>
                 </div>
             </a>
             <a href="{{ route('membres') }}" class="flex justify-center mt-4">
@@ -115,8 +111,6 @@
                         </svg>
                     </div>
                     <div class="text-gray-100 text-md text-center mt-4">Membres de la guilde Easis</div>
-                    <div class="text-gray-100 text-md text-center">Easis Guild Members</div>
-                    <div class="text-gray-100 text-md text-center">Mitglieder der Easis-Gilde</div>
                 </div>
             </a>
         </div>
