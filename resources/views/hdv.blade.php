@@ -188,6 +188,43 @@
                                             </div>
                                         </div>
                                         <div class="flex justify-center gap-2">
+                                            <div class="relative z-0 mb-6 w-16 group">
+                                                <input type="number" name="patk" id="patk"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       placeholder=" "/>
+                                                <label for="floating_first_name"
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% ATK</label>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-16 group">
+                                                <input type="number" name="pdef" id="pdef"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       placeholder=" "/>
+                                                <label for="floating_first_name"
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% DEF</label>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-16 group">
+                                                <input type="number" name="ppv" id="ppv"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       placeholder=" "/>
+                                                <label for="floating_first_name"
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% PV</label>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-16 group">
+                                                <input type="number" name="pmp" id="pmp"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       placeholder=" "/>
+                                                <label for="floating_first_name"
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% PM</label>
+                                            </div>
+                                            <div class="relative z-0 mb-6 w-16 group">
+                                                <input type="number" name="ppf" id="ppf"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       placeholder=" "/>
+                                                <label for="floating_first_name"
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% PF</label>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-center gap-2">
                                             <div class="relative z-0 mb-6 w-64 group">
                                                 <input type="text" name="eveil" id="eveil"
                                                        class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -304,6 +341,13 @@
                                             @if($item->vent !== null)VENT + {{ $item->vent }}@endif
                                             @if($item->foudre !== null)FOUDRE + {{ $item->foudre }}@endif
                                             @if($item->terre !== null)TERRE + {{ $item->terre }}@endif
+                                        </div>
+                                        <div class="text-red-200">
+                                            @if($item->patk !== null)ATK {{ $item->patk }}% @endif
+                                            @if($item->pdef !== null)DEF {{ $item->pdef }}% @endif
+                                            @if($item->ppv !== null)PV {{ $item->ppv }}% @endif
+                                            @if($item->pmp !== null)PM {{ $item->pmp }}% @endif
+                                            @if($item->ppf !== null)PF {{ $item->ppf }}% @endif
                                         </div>
                                         <div class="text-pink-600">
                                             @if($item->eveil !== null){{ $item->eveil }}@endif

@@ -39,6 +39,11 @@ class HdvController extends Controller
         $post->foudre = $request->input('foudre');
         $post->vent = $request->input('vent');
         $post->userId = $request->input('userId');
+        $post->patk = $request->input('patk');
+        $post->pdef = $request->input('pdef');
+        $post->ppv = $request->input('ppv');
+        $post->pmp = $request->input('pmp');
+        $post->ppf = $request->input('ppf');
 
 
         $post->save();
