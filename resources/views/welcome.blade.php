@@ -103,9 +103,9 @@
                                 style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 10px, 0px);"
                                 data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
                                 <div class="py-3 px-4">
-                                    <span class="block text-sm text-gray-900 ">pamp1n</span>
+                                    <span class="block text-sm text-gray-900 ">@if(auth()->user()){{ auth()->user()->name }}@endif</span>
                                     <span
-                                        class="block text-sm font-medium text-gray-500 truncate">pamp1n@proton.me</span>
+                                        class="block text-sm font-medium text-gray-500 truncate">@if(auth()->user()){{ auth()->user()->mail }}@endif</span>
                                 </div>
 
                                 <ul class="py-1" aria-labelledby="user-menu-button">
@@ -159,7 +159,6 @@
                                             </div>
                                         @endif</li>
                                 </ul>
-
 
                             </div>
                         </div>
