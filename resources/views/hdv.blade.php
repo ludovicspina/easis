@@ -320,9 +320,9 @@
                                 </td>
                                 <td class="font-medium text-gray-300 bg-gray-800 text-center">@if($item->typeRequete == 1)
                                         <span
-                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-200 text-green-900">Achat</span>@else
+                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-200 text-green-900">Vente</span>@else
                                         <span
-                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-indigo-200 text-indigo-900">Vente</span> @endif
+                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-indigo-200 text-indigo-900">Achat</span> @endif
                                 </td>
                                 @if(auth()->user())
                                     @if(auth()->user()->id == $item->userId)
