@@ -103,24 +103,16 @@
                                 style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 10px, 0px);"
                                 data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
                                 <div class="py-3 px-4">
-                                    <span class="block text-sm text-gray-900 ">@if(auth()->user()){{ auth()->user()->name }}@endif</span>
-                                    <span
-                                        class="block text-sm font-medium text-gray-500 truncate">@if(auth()->user()){{ auth()->user()->mail }}@endif</span>
+                                    @if(Auth::user())
+                                        <span
+                                            class="block text-sm text-gray-900 ">@if(auth()->user()){{ auth()->user()->name }}@endif</span>
+                                        <span
+                                            class="block text-sm font-medium text-gray-500 truncate">@if(auth()->user()){{ auth()->user()->mail }}@endif</span>
+                                    @endif
                                 </div>
-
-                                <ul class="py-1" aria-labelledby="user-menu-button">
-                                    <li>
-                                        <form action="https://guilde-easis.fr/logout"
-                                              class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                                              method="POST">
-                                            <input type="hidden" name="_token"
-                                                   value="P2aCQvsyKIMRTcK15wBKAp76elABK0ho6nd9UkoR">
-                                            <button type="submit" class="hover:underline">
-                                                Se déconnecter
-                                            </button>
-                                        </form>
-                                    </li>
-                                    <li>@if(Auth::user())
+                                @if(Auth::user())
+                                    <ul class="py-1" aria-labelledby="user-menu-button">
+                                        <li>
                                             <div
                                                 class="hidden z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
                                                 id="user-dropdown">
@@ -146,19 +138,20 @@
                                                 </ul>
 
                                             </div>
-                                        @else
-                                            <div
-                                                class="hidden z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
-                                                id="user-dropdown">
-                                                <div class="py-3 px-4">
-                                                    <a href="{{ route('login') }}" class="block text-sm text-gray-900 ">Se
-                                                        connecter</a>
-                                                    <a href="{{ route('register') }}"
-                                                       class="block text-sm text-gray-900 ">S'inscrire</a>
+                                            @else
+                                                <div
+                                                    class="hidden z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+                                                    id="user-dropdown">
+                                                    <div class="py-3 px-4">
+                                                        <a href="{{ route('login') }}"
+                                                           class="block text-sm text-gray-900 ">Se
+                                                            connecter</a>
+                                                        <a href="{{ route('register') }}"
+                                                           class="block text-sm text-gray-900 ">S'inscrire</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        @endif</li>
-                                </ul>
+                                            @endif</li>
+                                    </ul>
 
                             </div>
                         </div>
