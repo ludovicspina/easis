@@ -50,8 +50,10 @@ class HdvController extends Controller
     {
         $request = Hdv::find($id);
 
-        $request->isShowed = False;
-        $request->save();
+        if ($request->userId = auth()->user()->id) {
+            $request->isShowed = False;
+            $request->save();
+        }
 
         return redirect('hdv')->with('status', 'Archive supprimée.');
     }

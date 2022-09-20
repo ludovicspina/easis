@@ -62,23 +62,24 @@
                 </button>
 
 
-                <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+                <div class="w-full md:block md:w-auto" id="navbar-multi-level">
                     <ul class="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 border-gray-700">
-                    <!-- <li>
-                    <a href="{{ route('guildes') }}"
-                       class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Les guildes</a>
-                </li> -->
+                        <!-- <li>
+                        <a href="http://guilde-easis.fr/guildes"
+                           class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Les guildes</a>
+                    </li> -->
                         <li>
-                            <a href="{{ route('hdv') }}"
-                               class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Hotel de vente</a>
+                            <a href="https://guilde-easis.fr/hdv"
+                               class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Hotel
+                                de vente</a>
                         </li>
                         <li>
-                            <a href="{{ route('contribution') }}"
+                            <a href="https://guilde-easis.fr/contribution"
                                class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">XP
                                 de Guilde</a>
                         </li>
                         <li>
-                            <a href="{{ route('membres') }}"
+                            <a href="https://guilde-easis.fr/membres"
                                class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Membres</a>
                         </li>
                         <div class="flex items-center md:order-2">
@@ -89,48 +90,77 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke-width="1.5" stroke="currentColor" class="text-gray-100 w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
                                 </svg>
 
                             </button>
                             <!-- Dropdown menu -->
 
 
-
-                            @if(Auth::user())
-                                <div
-                                    class="hidden z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
-                                    id="user-dropdown">
-                                    <div class="py-3 px-4">
-                                        <span class="block text-sm text-gray-900 ">{{ Auth::user()->name }}</span>
-                                        <span
-                                            class="block text-sm font-medium text-gray-500 truncate">{{ Auth::user()->email }}</span>
-                                    </div>
-
-                                    <ul class="py-1" aria-labelledby="user-menu-button">
-                                        <li>
-                                            <form action="{{ route('logout') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" method="POST">
-                                                @csrf
-                                                <button type="submit"
-                                                        class="hover:underline">
-                                                    Se déconnecter
-                                                </button>
-                                            </form>
-                                        </li>
-                                    </ul>
-
+                            <div
+                                class="z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow hidden"
+                                id="user-dropdown"
+                                style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 10px, 0px);"
+                                data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
+                                <div class="py-3 px-4">
+                                    <span class="block text-sm text-gray-900 ">pamp1n</span>
+                                    <span
+                                        class="block text-sm font-medium text-gray-500 truncate">pamp1n@proton.me</span>
                                 </div>
-                            @else
-                                <div
-                                    class="hidden z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
-                                    id="user-dropdown">
-                                    <div class="py-3 px-4">
-                                        <a href="{{ route('login') }}" class="block text-sm text-gray-900 ">Se
-                                            connecter</a>
-                                        <a href="{{ route('register') }}" class="block text-sm text-gray-900 ">S'inscrire</a>
-                                    </div>
-                                </div>
-                            @endif
+
+                                <ul class="py-1" aria-labelledby="user-menu-button">
+                                    <li>
+                                        <form action="https://guilde-easis.fr/logout"
+                                              class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
+                                              method="POST">
+                                            <input type="hidden" name="_token"
+                                                   value="P2aCQvsyKIMRTcK15wBKAp76elABK0ho6nd9UkoR">
+                                            <button type="submit" class="hover:underline">
+                                                Se déconnecter
+                                            </button>
+                                        </form>
+                                    </li>
+                                    <li>@if(Auth::user())
+                                            <div
+                                                class="hidden z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+                                                id="user-dropdown">
+                                                <div class="py-3 px-4">
+                                                    <span
+                                                        class="block text-sm text-gray-900 ">{{ Auth::user()->name }}</span>
+                                                    <span
+                                                        class="block text-sm font-medium text-gray-500 truncate">{{ Auth::user()->email }}</span>
+                                                </div>
+
+                                                <ul class="py-1" aria-labelledby="user-menu-button">
+                                                    <li>
+                                                        <form action="{{ route('logout') }}"
+                                                              class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
+                                                              method="POST">
+                                                            @csrf
+                                                            <button type="submit"
+                                                                    class="hover:underline">
+                                                                Se déconnecter
+                                                            </button>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        @else
+                                            <div
+                                                class="hidden z-50 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+                                                id="user-dropdown">
+                                                <div class="py-3 px-4">
+                                                    <a href="{{ route('login') }}" class="block text-sm text-gray-900 ">Se
+                                                        connecter</a>
+                                                    <a href="{{ route('register') }}"
+                                                       class="block text-sm text-gray-900 ">S'inscrire</a>
+                                                </div>
+                                            </div>
+                                        @endif</li>
+                                </ul>
+
+                            </div>
                         </div>
                     </ul>
                 </div>
