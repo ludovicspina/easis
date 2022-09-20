@@ -287,7 +287,7 @@
                         @foreach($hdv as $item)
                             <tr class="border-b bg-gray-800 border-gray-700">
                                 <td class="font-medium text-gray-300 bg-gray-800 text-center">
-                                    <div class="flex flex-col">
+                                    <div class="flex flex-col  whitespace-normal max-w-xl">
                                         <div class="underline text-base">
                                             {{ $item->objet }}  @if($item->niveau !== null)
                                                 + {{ $item->niveau }}@endif
