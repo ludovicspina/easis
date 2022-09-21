@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CdgController;
 use App\Http\Controllers\HdvController;
+use App\Http\Controllers\MembresController;
+use App\Models\Members;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +33,7 @@ Route::get('/cdgArchives', [CdgController::class, 'index'])->name('cdgArchives')
 Route::post('cdgAdd', [CdgController::class, 'store'])->name('cdgAdd');
 
 // membres
-Route::view('/membres', 'membres')->name('membres');
+Route::get('/membres', [MembresController::class, 'index'])->name('membres');
 
 // classes
 Route::view('/classes', 'classes/classes')->name('classes');

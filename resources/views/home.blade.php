@@ -114,7 +114,6 @@
                 </div>
             </a>
         </div>
-        <div></div>
 
     </div>
 
@@ -123,6 +122,7 @@
             background-image: url({{asset('img/bg/Traseia.jpg')}});
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
     </style>
 
