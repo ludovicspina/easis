@@ -1,18 +1,15 @@
 @extends('welcome')
 @section('content')
 
-    <!-- Modal toggle
-    <button class="w-42 px-3 py-1 md:left-3 md:top-20 top-2 left-32 absolute text-white bg-blue-500 bg-opacity-25 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm md:px-5 md:py-2.5 text-center" type="button" data-modal-toggle="defaultModal">
-        Voir les dernières mises à jour.
-    </button> -->
+    <div></div>
     <div class="grid md:grid-cols-6 grid-cols-1">
         <div></div>
         <div
-            class="gid grid-cols-1 md:col-span-2 mt-16 md:mt-32 backdrop-blur bg-black bg-opacity-25 md:py-6 py-8 md:px-4 md:rounded-3xl text-neutral-200 shadow-2xl">
-            <div class="md:flex md:justify-center">
+            class="gid grid-cols-1 md:col-span-2 mt-16 md:mt-16 backdrop-blur bg-black bg-opacity-25 md:py-4 py-8 md:px-4 md:rounded-3xl text-neutral-200 shadow-2xl">
+            <div class="md:flex md:justify-center md:align-middle">
                 <div class="text-center px-2 md:flex md:flex-col">
-                    <div class="text-4xl md:text-6xl font-bold">Bienvenue sur le site</div>
-                    <div class="text-4xl md:text-6xl text-indigo-400 font-bold">de la guilde Easis !</div>
+                    <div class="text-3xl md:text-4xl font-bold">Bienvenue sur le site</div>
+                    <div class="text-3xl md:text-4xl text-indigo-400 font-bold">de la guilde Easis !</div>
                     <div class="text-lg px-2 md:text-xl mt-6 text-neutral-300">Vous retrouverez ici toutes
                         les
                         informations
@@ -21,8 +18,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center mt-10 md:visible">
-                <div class="px-5 py-2 w-48 rounded-lg shadow-xl bg-black bg-opacity-25 shadow-md">
+            <div class="flex justify-center mt-6 md:visible">
+                <div class="px-5 py-2 w-64 rounded-lg shadow-xl bg-black bg-opacity-25 shadow-md">
                     <div class="flow-root">
                         <ul role="list" class="divide-y divide-gray-800">
                             <li class="py-3">
@@ -41,7 +38,7 @@
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-1 min-w-0">
                                         <p class="text-sm font-medium truncate text-white">
-                                            Dewylia & Ethalides
+                                            Ethalides & StormWorgen
                                         </p>
                                         <p class="text-sm truncate text-gray-400">
                                             Officiers
@@ -54,7 +51,7 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                <div class="flex justify-center text-lg text-center md:text-xl mt-10 text-neutral-300">N'hésitez pas à
+                <div class="flex justify-center text-lg text-center mt-6 text-neutral-300">N'hésitez pas à
                     rejoindre le discord et
                     ainsi avoir une chance
                     d'entrer dans la guilde!
@@ -63,7 +60,7 @@
 
                 <div class="mt-4 flex justify-center">
                     <button type="button"
-                            class="text-white text-xl md:text-2xl bg-gradient-to-r shadow-lg shadow-blue-500/50 from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            class="text-white text-xl md:text-xl bg-gradient-to-r shadow-lg shadow-blue-500/50 from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-800 font-medium rounded-lg text-sm px-4 py-1.5 text-center mr-2 mb-2">
                         <a href="https://discord.gg/kt75BpeqtV">Discord</a>
                     </button>
                 </div>
@@ -97,20 +94,6 @@
                         </svg>
                     </div>
                     <div class="text-gray-100 text-md text-center mt-4">Voir les statistiques de guilde</div>
-                </div>
-            </a>
-            <a href="{{ route('membres') }}" class="flex justify-center mt-4">
-                <div
-                    class="rounded-lg shadow-xl p-4 w-64 hover:bg-opacity-40 shadow-md backdrop-blur-md bg-black shadow-2xl bg-opacity-50">
-                    <div class="flex justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor" class="w-20 h-20 text-gray-200"
-                             style="filter: drop-shadow(1px 1px 3px #f6f6f6);">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-                        </svg>
-                    </div>
-                    <div class="text-gray-100 text-md text-center mt-4">Membres de la guilde Easis</div>
                 </div>
             </a>
         </div>

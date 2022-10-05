@@ -282,7 +282,7 @@
                         <div
                             class="block text-white cursor-not-allowed focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
                             type="button">
-                            Connecter vous pour ajouter un objet
+                            <a href="{{ route('register') }}">Connecter vous pour ajouter un objet</a>
                         </div>
                     @endif
 
