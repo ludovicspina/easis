@@ -9,6 +9,8 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            <label class="flex justify-center text-3xl">S'inscrire</label>
+
             <div>
                 <x-jet-label for="name" value="{{ __('Pseudo en jeu (Il doit être identique!)') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />

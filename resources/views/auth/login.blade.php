@@ -14,6 +14,7 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
+            <label class="flex justify-center text-3xl">Se connecter</label>
 
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />
