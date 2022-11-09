@@ -1,50 +1,50 @@
 @extends('welcome')
 @section('content')
-    <nav class="flex justify-center mt-1" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1 md:space-x-3">
-            <li class="inline-flex items-center">
-                <a href="{{route('home')}}"
-                   class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
-                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-                    </svg>
-                    Accueil
-                </a>
-            </li>
-            <li>
-                <div class="flex items-center">
-                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <a href="{{route('hdv')}}"
-                       class="ml-1 text-sm font-medium md:ml-2 text-gray-400 hover:text-white">Hotel de vente</a>
-                </div>
-            </li>
-        </ol>
-    </nav>
+    <div class="flex justify-center">
+        <nav class="flex justify-center mt-1" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="{{route('home')}}"
+                       class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                        </svg>
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        <a href="{{route('hdv')}}"
+                           class="ml-1 text-sm font-medium md:ml-2 text-gray-400 hover:text-white">Hotel de vente</a>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </div>
 
-
-
-    <div class="mb-4 flex justify-center mx-10">
+    <div class="mb-2 flex justify-center mx-10">
         <ul class="flex md:flex-wrap -mb-px text-xl font-medium text-center" id="myTab" data-tabs-toggle="#serverTab"
             role="tablist">
             <li class="mr-2" role="presentation">
                 <button
-                    class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-300"
+                    class="inline-block pt-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-300"
                     id="genese-tab" data-tabs-target="#genese" type="button" role="tab" aria-controls="genese"
-                    aria-selected="false">Genese
+                    aria-selected="false">Genèse
                 </button>
             </li>
         </ul>
     </div>
 
     <div id="serverTab">
-        <div class="hidden p-4 rounded-lg" id="genese" role="tabpanel"
+        <div class="hidden p-b rounded-lg" id="genese" role="tabpanel"
              aria-labelledby="genese-tab">
             <!-- Main modal -->
             <div id="add-item-g" tabindex="-1" aria-hidden="true"
@@ -193,35 +193,40 @@
                                                        class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% ATK</label>
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
+                                                    ATK</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="pdef" id="pdef"
                                                        class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% DEF</label>
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
+                                                    DEF</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="ppv" id="ppv"
                                                        class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% PV</label>
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
+                                                    PV</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="pmp" id="pmp"
                                                        class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% PM</label>
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
+                                                    PM</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="ppf" id="ppf"
                                                        class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">% PF</label>
+                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
+                                                    PF</label>
                                             </div>
                                         </div>
                                         <div class="flex justify-center gap-2">
@@ -261,17 +266,8 @@
                 </div>
             </div>
 
-            <div class="text-center text-gray-300 mt-3">Ce site est acceccible à tous, si vous ne le respectez pas
-                il
-                disparaîtra rapidement.
-            </div>
-            <div class="text-center text-gray-300 mt-1">Soyez respectueux et ayez du savoir vivre.</div>
-            <div class="text-center text-gray-300 mt-2">Pour toute réclamation/idée/proposition contactez moi sur
-                discord : pamp1n#7133
-            </div>
-
             <div class="flex justify-center mt-4"><!-- Modal toggle -->
-                <div class="flex flex-col gap-4">
+                <div class="flex gap-10">
                     @if(auth()->user())
                         <button
                             class="block text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
@@ -310,14 +306,8 @@
                                 QTT
                             </th>
                             <th class="py-3 px-6 text-center">
-                                Joueur
+                                Informations
                             </th>
-                            <th class="py-3 px-6 text-center">
-                                Type de requete
-                            </th>
-                            @if(auth()->user())
-                                <th class="py-3 px-6 text-center">Action</th>
-                            @endif
                         </tr>
                         </thead>
                         <tbody>
@@ -327,30 +317,61 @@
                                     <div class="flex flex-col  whitespace-normal max-w-xl">
                                         <div class="underline text-base">
                                             {{ $item->objet }}  @if($item->niveau !== null)
-                                                + {{ $item->niveau }}@endif
+                                                + {{ $item->niveau }}
+                                            @endif
                                         </div>
                                         <div class="text-yellow-200">
-                                            @if($item->for !== null)FOR + {{ $item->for }}@endif
-                                            @if($item->end !== null)END + {{ $item->end }}@endif
-                                            @if($item->dex !== null)DEX + {{ $item->dex }}@endif
-                                            @if($item->int !== null)INT + {{ $item->int }}@endif
+                                            @if($item->for !== null)
+                                                FOR + {{ $item->for }}
+                                            @endif
+                                            @if($item->end !== null)
+                                                END + {{ $item->end }}
+                                            @endif
+                                            @if($item->dex !== null)
+                                                DEX + {{ $item->dex }}
+                                            @endif
+                                            @if($item->int !== null)
+                                                INT + {{ $item->int }}
+                                            @endif
                                         </div>
                                         <div class="text-blue-200">
-                                            @if($item->feu !== null)FEU + {{ $item->feu }}@endif
-                                            @if($item->eau !== null)EAU + {{ $item->eau }}@endif
-                                            @if($item->vent !== null)VENT + {{ $item->vent }}@endif
-                                            @if($item->foudre !== null)FOUDRE + {{ $item->foudre }}@endif
-                                            @if($item->terre !== null)TERRE + {{ $item->terre }}@endif
+                                            @if($item->feu !== null)
+                                                FEU + {{ $item->feu }}
+                                            @endif
+                                            @if($item->eau !== null)
+                                                EAU + {{ $item->eau }}
+                                            @endif
+                                            @if($item->vent !== null)
+                                                VENT + {{ $item->vent }}
+                                            @endif
+                                            @if($item->foudre !== null)
+                                                FOUDRE + {{ $item->foudre }}
+                                            @endif
+                                            @if($item->terre !== null)
+                                                TERRE + {{ $item->terre }}
+                                            @endif
                                         </div>
                                         <div class="text-red-200">
-                                            @if($item->patk !== null)ATK {{ $item->patk }}% @endif
-                                            @if($item->pdef !== null)DEF {{ $item->pdef }}% @endif
-                                            @if($item->ppv !== null)PV {{ $item->ppv }}% @endif
-                                            @if($item->pmp !== null)PM {{ $item->pmp }}% @endif
-                                            @if($item->ppf !== null)PF {{ $item->ppf }}% @endif
+                                            @if($item->patk !== null)
+                                                ATK {{ $item->patk }}%
+                                            @endif
+                                            @if($item->pdef !== null)
+                                                DEF {{ $item->pdef }}%
+                                            @endif
+                                            @if($item->ppv !== null)
+                                                PV {{ $item->ppv }}%
+                                            @endif
+                                            @if($item->pmp !== null)
+                                                PM {{ $item->pmp }}%
+                                            @endif
+                                            @if($item->ppf !== null)
+                                                PF {{ $item->ppf }}%
+                                            @endif
                                         </div>
                                         <div class="text-pink-600">
-                                            @if($item->eveil !== null){{ $item->eveil }}@endif
+                                            @if($item->eveil !== null)
+                                                {{ $item->eveil }}
+                                            @endif
                                         </div>
                                     </div>
 
@@ -358,37 +379,39 @@
                                 </td>
                                 <td class="font-medium text-gray-300 bg-gray-800 text-center">{{ number_format($item->prix) }}</td>
                                 <td class="font-medium text-gray-300 bg-gray-800 text-center">{{ $item->quantite }}</td>
-                                <td class="font-medium py-4 text-gray-300 bg-gray-800 text-center">
+                                <td class="font-medium text-gray-300 bg-gray-800 text-center">
+                                    <div class="flex md:flex-row flex-col gap-1 md:gap-0 md:justify-center ">
+                                        <button>
                                     <span
-                                        class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-blue-200 text-blue-800">{{ $item->joueur }}</span>
-                                </td>
-                                <td class="font-medium text-gray-300 bg-gray-800 text-center">@if($item->typeRequete == 1)
+                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-blue-200 text-blue-900">{{ $item->joueur }}</span>
+                                        </button>
+                                        @if($item->typeRequete == 1)
+                                            <button>
                                         <span
-                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-200 text-green-900">Vente</span>@else
+                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-200 text-green-900">Vente</span>
+                                            </button>
+                                        @else
+                                            <button>
                                         <span
-                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-indigo-200 text-indigo-900">Achat</span> @endif
+                                            class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-indigo-200 text-indigo-900">Achat</span>
+                                            </button>
+                                        @endif
+                                        @if(auth()->user())
+                                            @if(auth()->user()->id == $item->userId)
+                                                <form autocomplete="off"
+                                                      action="{{ route('hdvRemove', $item->id) }}"
+                                                      method="POST">
+                                                    @csrf
+                                                    @method('put')
+                                                    <button type="submit">
+                                                    <span
+                                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-red-200 text-red-900">Supprimer</span>
+                                                    </button>
+                                                </form>
+                                            @endif
+                                        @endif
+                                    </div>
                                 </td>
-                                @if(auth()->user())
-                                    @if(auth()->user()->id == $item->userId)
-                                        <td class="text-center">
-                                            <form autocomplete="off"
-                                                  action="{{ route('hdvRemove', $item->id) }}"
-                                                  method="POST">
-                                                @csrf
-                                                @method('put')
-                                                <button type="submit">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                         viewBox="0 0 24 24" stroke-width="1.5"
-                                                         stroke="currentColor"
-                                                         class="text-red-400 w-6 h-6">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
-                                                    </svg>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    @endif
-                                @endif
                             </tr>
                         @endforeach
                         </tbody>
@@ -447,13 +470,11 @@
                 td1 = tr[i].getElementsByTagName("td")[1];
                 td2 = tr[i].getElementsByTagName("td")[2];
                 td3 = tr[i].getElementsByTagName("td")[3];
-                td4 = tr[i].getElementsByTagName("td")[4];
                 if (td0) {
                     txtValue0 = td0.textContent || td0.innerText;
                     txtValue1 = td1.textContent || td1.innerText;
                     txtValue2 = td2.textContent || td2.innerText;
                     txtValue3 = td3.textContent || td3.innerText;
-                    txtValue4 = td4.textContent || td4.innerText;
                     if (txtValue0.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     } else {
@@ -466,11 +487,7 @@
                                 if (txtValue3.toUpperCase().indexOf(filter) > -1) {
                                     tr[i].style.display = "";
                                 } else {
-                                    if (txtValue4.toUpperCase().indexOf(filter) > -1) {
-                                        tr[i].style.display = "";
-                                    } else {
-                                        tr[i].style.display = "none";
-                                    }
+                                    tr[i].style.display = "none";
                                 }
                             }
                         }

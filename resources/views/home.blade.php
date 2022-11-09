@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="flex justify-center mt-6 md:visible">
-                <div class="px-5 py-2 w-64 rounded-lg shadow-xl bg-black bg-opacity-25 shadow-md">
+                <div class="px-5 py-2 w-80 rounded-lg shadow-xl bg-black bg-opacity-25 shadow-md">
                     <div class="flow-root">
                         <ul role="list" class="divide-y divide-gray-800">
                             <li class="py-3">
@@ -38,7 +38,7 @@
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-1 min-w-0">
                                         <p class="text-sm font-medium truncate text-white">
-                                            Ethalides & StormWorgen
+                                            Ethalides, StormWorgen & Ikseday
                                         </p>
                                         <p class="text-sm truncate text-gray-400">
                                             Officiers
@@ -97,8 +97,8 @@
                 </div>
             </a>
         </div>
-
     </div>
+
 
     <style>
         html {

@@ -62,13 +62,6 @@
 
                     <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
                         <ul class="flex flex-col mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 border-gray-700">
-                            <li class="flex justify-center md:mt-0 mt-2">
-                                <button
-                                    class="border bg-blue-800 bg-opacity-50 border-blue-800 rounded block text-white font-medium rounded-lg px-5 text-center"
-                                    type="button" data-modal-toggle="userModal">
-                                    Espace utilisateur
-                                </button>
-                            </li>
                             <li class="flex justify-center">
                                 <a href="{{ route('hdv') }}"
                                    class="py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-gray-200 hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Hotel
@@ -84,20 +77,62 @@
                     </div>
                 </div>
             </nav>
+            <div class="flex justify-center mt-2">
+                <div id="toast-notification"
+                     class="md:absolute md:right-5 md:top-20 p-3 w-full max-w-xs rounded-lg shadow bg-neutral-900 shadow-xl bg-opacity-90 text-gray-300"
+                     role="alert">
+                    <div class="flex items-center">
+                        <div class="inline-block relative shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" class="z-10 w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                            </svg>
+                        </div>
+                        @if(Auth::user())
+                            <div class="ml-3 text-sm font-normal">
+                                <div class="text-sm font-semibold underline text-white">Connecté en tant
+                                    que {{ Auth::user()->name }}</div>
+                                <div class="text-sm text-neutral-300 font-normal">{{ Auth::user()->email }}</div>
+                                <form action="{{ route('logout') }}"
+                                      method="POST">
+                                    @csrf
+                                    <button type="submit"
+                                            class="text-sm hover:underline hover:text-red-700 text-red-500 font-normal">
+                                        Se déconnecter
+                                    </button>
+                                </form>
+                            </div>
+                        @else
+                            <div class="ml-3 text-sm font-normal">
+                                <div class="text-sm font-semibold underline text-white">Déconnecté</div>
+                                <div class="flex gap-1">
+                                    <a href="{{ route('login') }}" class="hover:underline hover:text-blue-700 text-sm text-blue-500 font-normal">Se
+                                        connecter</a>
+                                    <div>ou</div>
+                                    <a href="{{ route('register') }}"
+                                       class="hover:underline hover:text-blue-700 text-sm text-blue-500 font-normal">s'inscrire</a>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
             <!-- Main L -->
             <div id="userModal" tabindex="-1" aria-hidden="true"
                  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
                 <div class="relative p-4 w-full max-w-lg h-full md:h-auto">
                     <!-- Modal content -->
-                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <div class="relative rounded-lg shadow bg-gray-700">
                         <!-- Modal header -->
                         <div
-                            class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                            <div class="text-xl flex font-semibold text-gray-900 dark:text-white">
+                            class="flex justify-between items-start p-4 rounded-t border-b border-gray-600">
+                            <div class="text-xl flex font-semibold text-white">
                                 Espace utilisateur
                             </div>
                             <button type="button"
-                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    class="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-600 hover:text-white"
                                     data-modal-toggle="userModal">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
                                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -108,37 +143,6 @@
                                 <span class="sr-only">Fermer</span>
                             </button>
                         </div>
-                        <!-- Modal body -->
-                        <div class="p-6 space-y-6">
-                            @if(Auth::user())
-                                <div class="text-base flex flex-col leading-relaxed text-gray-400">
-                                    <div class="text-gray-400">Pseudo : {{ Auth::user()->name }}</div>
-                                    <div class="text-gray-400">Mail : {{ Auth::user()->email }}</div>
-                                </div>
-                            @else
-                                <p class="flex flex-col text-base leading-relaxed text-gray-400">
-                                    <a class="text-center hover:text-white" href="{{ route('login') }}">Se connecter</a>
-                                    <a class="text-center hover:text-white"
-                                       href="{{ route('register') }}">S'inscrire</a>
-                                </p>
-                            @endif
-                        </div>
-                        <!-- Modal footer -->
-                        @if(Auth::user())
-                            <div
-                                class="flex justify-center items-center p-2 rounded-b border-t border-gray-600">
-
-                                <form action="{{ route('logout') }}"
-                                      method="POST">
-                                    @csrf
-                                    <button type="submit"
-                                            class="focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2 mr-2 mb-2 bg-red-800 hover:bg-red-700 focus:ring-red-900">
-                                        Se déconnecter
-                                    </button>
-                                </form>
-
-                            </div>
-                        @endif
                     </div>
                 </div>
             </div
@@ -167,24 +171,6 @@
                     <li>
                         <a href="mailto:pamp1n@proton.me" class="hover:underline">Contact</a>
                     </li>
-                    @if(!Auth::user())
-                        <li>
-                            <a href="{{ route('login') }}" class="hover:underline">Se connecter</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('register') }}" class="hover:underline">S'inscrire</a>
-                        </li>
-                    @else
-                        <li>
-                            <form action="{{ route('logout') }}" class="rounded-b" method="POST">
-                                @csrf
-                                <button type="submit"
-                                        class="hover:underline">
-                                    Se déconnecter
-                                </button>
-                            </form>
-                        </li>
-                    @endif
                 </ul>
             </footer>
             <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
