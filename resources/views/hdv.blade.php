@@ -5,7 +5,7 @@
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
                     <a href="{{route('home')}}"
-                       class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                       class="inline-flex items-center text-sm font-medium text-white hover:text-white">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -16,35 +16,26 @@
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                   clip-rule="evenodd"></path>
                         </svg>
                         <a href="{{route('hdv')}}"
-                           class="ml-1 text-sm font-medium md:ml-2 text-gray-400 hover:text-white">Hotel de vente</a>
+                           class="ml-1 text-sm font-medium md:ml-2 text-white hover:text-white">Hotel de vente</a>
                     </div>
                 </li>
             </ol>
         </nav>
     </div>
 
-    <div class="mb-2 flex justify-center mx-10">
-        <ul class="flex md:flex-wrap -mb-px text-xl font-medium text-center" id="myTab" data-tabs-toggle="#serverTab"
-            role="tablist">
-            <li class="mr-2" role="presentation">
-                <button
-                    class="inline-block pt-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-300"
-                    id="genese-tab" data-tabs-target="#genese" type="button" role="tab" aria-controls="genese"
-                    aria-selected="false">Genèse
-                </button>
-            </li>
-        </ul>
+    <div class="mb-2 flex justify-center text-3xl text-white font-bold">
+        Genèse
     </div>
 
     <div id="serverTab">
-        <div class="hidden p-b rounded-lg" id="genese" role="tabpanel"
+        <div class="p-b rounded-lg" id="genese" role="tabpanel"
              aria-labelledby="genese-tab">
             <!-- Main modal -->
             <div id="add-item-g" tabindex="-1" aria-hidden="true"

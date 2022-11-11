@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hdv;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class HdvController extends Controller
 {
@@ -15,6 +16,16 @@ class HdvController extends Controller
             ->get();
 
         return view('hdv', compact('hdv'));
+    }
+
+    public function getAll()
+    {
+        $hdvCount = Hdv::select('*')
+            ->where('created_at', '>=', Carbon::now()->subDay()->toDateTimeString())
+            ->orderBy('created_at', 'DESC')
+            ->count();
+
+        return view('home', compact('hdvCount'));
     }
 
     public function store(Request $request)

@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::view('/', 'home')->name('home');
 
+Route::get('/', [HdvController::class, 'getAll'])->name('home');
 
 Route::get('/hdv', [HdvController::class, 'index'])->name('hdv');
 Route::post('hdvAdd', [HdvController::class, 'store'])->name('hdvAdd');
