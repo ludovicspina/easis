@@ -57,7 +57,16 @@
                         </div>
                         <div class="ml-3 text-sm font-normal">
                             <div class="text-xl font-semibold underline text-white">Hotel de vente</div>
-                            <div class="text-lg text-neutral-300 font-normal">{{ $hdvCount }} nouvel objet</div>
+
+
+                            @if($hdvCount == 0)
+                                <div class="text-lg text-neutral-300 font-normal">Aucun nouvel objet</div>
+                            @elseif($hdvCount == 1)
+                                <div class="text-lg text-neutral-300 font-normal">{{ $hdvCount }} nouvel objet</div>
+                            @else
+                                <div class="text-lg text-neutral-300 font-normal">{{ $hdvCount }} nouveaux objets</div>
+                            @endif
+
                             <a href="hdv"
                                class="text-base hover:underline hover:text-blue-700 text-blue-500 font-normal">
                                 Aller faire un tour
