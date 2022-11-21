@@ -42,9 +42,9 @@
                  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-auto md:inset-0 h-modal md:h-full">
                 <div class="relative p-4 h-full md:h-auto">
                     <!-- Modal content -->
-                    <div class="relative rounded-lg shadow backdrop-blur-xl bg-opacity-10">
+                    <div class="relative rounded-lg backdrop-blur-xl bg-opacity-10">
                         <button type="button"
-                                class="absolute top-3 right-2.5 text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-800 hover:text-white"
+                                class="absolute top-3 right-2.5 text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-black bg-opacity-40 backdrop-blur hover:text-white"
                                 data-modal-toggle="add-item-g">
                             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -64,14 +64,14 @@
                                         <div class="flex flex-col mb-4">
                                             <div>
                                                 <input checked type="radio" value="1" name="typeRequete"
-                                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
+                                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-800">
                                                 <label for="default-radio-1"
                                                        class="ml-2 text-sm font-medium text-gray-300">Je vend un
                                                     objet</label>
                                             </div>
                                             <div>
                                                 <input type="radio" value="0" name="typeRequete"
-                                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600">
+                                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-800">
                                                 <label for="default-radio-2"
                                                        class="ml-2 text-sm font-medium text-gray-300">Je recherche un
                                                     objet</label>
@@ -80,7 +80,7 @@
                                         <div class="relative z-0 mb-6 w-48 group">
                                             <input type="text" name="joueur" id="joueur"
                                                    value="@if(auth()->user()){{ auth()->user()->name }}@endif"
-                                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                    placeholder=" " required/>
                                             <label for="floating_last_name"
                                                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Pseudo
@@ -91,21 +91,21 @@
                                         <div class="flex justify-center gap-2">
                                             <div class="relative z-0 mb-3 w-48 group">
                                                 <input type="text" name="objet" id="objet"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" " required/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Objet</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="niveau" id="niveau"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">+</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="quantite" id="quantite" value="1"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" " required/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Quantité</label>
@@ -114,28 +114,28 @@
                                         <div class="flex justify-center gap-2">
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="for" id="for"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">FOR</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="end" id="end"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">END</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="dex" id="dex"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">DEX</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="int" id="int"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">INT</label>
@@ -144,35 +144,35 @@
                                         <div class="flex justify-center gap-2">
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="eau" id="eau"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Eau</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="feu" id="feu"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Feu</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="terre" id="terre"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Terre</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="foudre" id="foudre"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Foudre</label>
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="vent" id="vent"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Vent</label>
@@ -181,7 +181,7 @@
                                         <div class="flex justify-center gap-2">
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="patk" id="patk"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
@@ -189,7 +189,7 @@
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="pdef" id="pdef"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
@@ -197,7 +197,7 @@
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="ppv" id="ppv"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
@@ -205,7 +205,7 @@
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="pmp" id="pmp"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
@@ -213,7 +213,7 @@
                                             </div>
                                             <div class="relative z-0 mb-6 w-16 group">
                                                 <input type="number" name="ppf" id="ppf"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
@@ -223,7 +223,7 @@
                                         <div class="flex justify-center gap-2">
                                             <div class="relative z-0 mb-6 w-64 group">
                                                 <input type="text" name="eveil" id="eveil"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                        placeholder=" "/>
                                                 <label for="floating_first_name"
                                                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Eveil</label>
@@ -234,7 +234,7 @@
 
                                         <div class="relative z-0 mb-6 w-48 group">
                                             <input type="number" name="prix" id="prix"
-                                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
                                                    placeholder=" " required/>
                                             <label for="floating_first_name"
                                                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Prix</label>
@@ -275,7 +275,7 @@
 
                     <div>
                         <input id="filterInput" onkeyup="filter()" type="search" id="default-search"
-                               class="text-center w-64 text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                               class="text-center w-64 text-sm rounded-lg bg-gray-800 placeholder-gray-400 text-white focus:ring-blue-500"
                                placeholder="Rechercher" required>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
                 <div></div>
                 <div class="col-span-8 md:overflow-hidden overflow-x-scroll">
                     <table id="filterTable" class="col-span-2 text-sm text-left text-gray-40 md:w-full md:mx-4">
-                        <thead class="text-xs uppercase bg-gray-700 text-gray-400 mt-4">
+                        <thead class="text-xs uppercase bg-neutral-800 text-gray-400 mt-4">
                         <tr>
                             <th class="py-3 px-6 text-center">
                                 Objet
@@ -303,8 +303,8 @@
                         </thead>
                         <tbody>
                         @foreach($hdv as $item)
-                            <tr class="border-b bg-gray-800 border-gray-700">
-                                <td class="font-medium text-gray-300 bg-gray-800 text-center">
+                            <tr class="bg-neutral-900 backdrop-blur">
+                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">
                                     <div class="flex flex-col  whitespace-normal max-w-xl">
                                         <div class="underline text-base">
                                             {{ $item->objet }}  @if($item->niveau !== null)
@@ -368,9 +368,9 @@
 
 
                                 </td>
-                                <td class="font-medium text-gray-300 bg-gray-800 text-center">{{ number_format($item->prix) }}</td>
-                                <td class="font-medium text-gray-300 bg-gray-800 text-center">{{ $item->quantite }}</td>
-                                <td class="font-medium text-gray-300 bg-gray-800 text-center">
+                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">{{ number_format($item->prix) }}</td>
+                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">{{ $item->quantite }}</td>
+                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">
                                     <div class="flex md:flex-row flex-col gap-1 md:gap-0 md:justify-center ">
                                         <button>
                                     <span

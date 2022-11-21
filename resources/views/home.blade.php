@@ -3,9 +3,9 @@
 
     <div>
         <div class="flex items-center justify-center mt-4">
-            <div class="grid md:grid-cols-3 md:w-1/2 gap-6">
+            <div class="grid md:grid-cols-3 grid-cols-2 mx-4 md:mx-0 md:w-1/2 gap-4 md:gap-6">
                 <div
-                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-48 rounded-lg shadow-xl bg-gray-900 shadow-xl text-gray-300">
+                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
                     <div class="flex items-center">
                         <div class="inline-block relative shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -17,15 +17,15 @@
                         @if(Auth::user())
                             <div class="ml-3 text-sm font-normal">
                                 <div>
-                                    <div class="text-xl font-semibold underline text-white">Connecté</div>
-                                    <div class="text-xl font-semibold text-white">{{ Auth::user()->name }}</div>
+                                    <div class="md:text-xl font-semibold underline text-white">Connecté</div>
+                                    <div class="md:text-xl font-semibold text-white">{{ Auth::user()->name }}</div>
                                 </div>
-                                <div class="text-lg text-neutral-300 font-normal">{{ Auth::user()->email }}</div>
+                                <div class="md:text-lg text-neutral-300 font-normal">{{ Auth::user()->email }}</div>
                                 <form action="{{ route('logout') }}"
                                       method="POST">
                                     @csrf
                                     <button type="submit"
-                                            class="text-base hover:underline hover:text-red-700 text-red-500 font-normal">
+                                            class="md:text-base hover:underline hover:text-red-700 text-red-500 font-normal">
                                         Se déconnecter
                                     </button>
                                 </form>
@@ -45,9 +45,9 @@
                         @endif
                     </div>
                 </div>
-                <div
-                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-48 rounded-lg shadow-xl bg-gray-900 shadow-xl text-gray-300">
-                    <div class="flex items-center">
+                <a href="hdv" style="background-image: url({{asset('wealth-2.jpg')}}); background-size: cover"
+                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg drop-shadow backdrop-blur shadow-xl text-gray-300">
+                    <div class="flex items-center backdrop-blur-sm rounded-xl px-3">
                         <div class="inline-block relative shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="w-6 h-6">
@@ -56,62 +56,71 @@
                             </svg>
                         </div>
                         <div class="ml-3 text-sm font-normal">
-                            <div class="text-xl font-semibold underline text-white">Hotel de vente</div>
-
+                            <div class="md:text-3xl font-semibold text-white">Hotel de vente</div>
 
                             @if($hdvCount == 0)
-                                <div class="text-lg text-neutral-300 font-normal">Aucun nouvel objet</div>
+                                <div class="md:text-xl text-neutral-300 font-normal">Aucun nouvel objet</div>
                             @elseif($hdvCount == 1)
-                                <div class="text-lg text-neutral-300 font-normal">{{ $hdvCount }} nouvel objet</div>
+                                <div class="md:text-xl text-neutral-300 font-normal">{{ $hdvCount }} nouvel objet</div>
                             @else
-                                <div class="text-lg text-neutral-300 font-normal">{{ $hdvCount }} nouveaux objets</div>
+                                <div class="md:text-xl text-neutral-300 font-normal">{{ $hdvCount }} nouveaux objets
+                                </div>
                             @endif
 
-                            <a href="hdv"
-                               class="text-base hover:underline hover:text-blue-700 text-blue-500 font-normal">
-                                Aller faire un tour
-                            </a>
                         </div>
                     </div>
-                </div>
-                <div
-                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-48 rounded-lg shadow-xl bg-gray-900 shadow-xl text-gray-300">
+                </a>
+                <a href="https://discord.gg/kt75BpeqtV" style="background-image: url({{asset('discord.png')}}); background-size: cover; background-position: center"
+                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
                     <div class="flex items-center">
                         <div class="inline-block relative shrink-0">
-                            <img src="{{ asset("/img/logo-easis.png") }}" class="w-6 h-6">
+                            <img src="{{ asset("/img/logo-easis.png") }}" class="w-10 h-10">
                         </div>
                         <div class="ml-3 text-sm font-normal">
-                            <div class="text-xl font-semibold underline text-white">Discord</div>
-                            <a href="https://discord.gg/kt75BpeqtV"
-                               class="text-base hover:underline hover:text-blue-700 text-blue-500 font-normal">
-                                Rejoindre le discord d'Easis
-                            </a>
+                            <div class="md:text-3xl font-semibold text-white"></div>
                         </div>
                     </div>
-                </div>
-                <div
-                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-48 rounded-lg shadow-xl bg-gray-900 shadow-xl text-gray-300">
-                    <a href="https://universe.flyff.com/play" class="flex items-center">
+                </a>
+                <a href="https://universe.flyff.com/play"
+                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
+                    <div class="flex items-center">
                         <img src="https://universe.flyff.com/storage/img/logofull.png" height="54"
                              alt="Flyff Universe logo">
-                    </a>
-                </div>
-                <div
-                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-48 rounded-lg shadow-xl bg-gray-900 shadow-xl text-gray-300">
-                    <a href="https://madrigalinside.com/" class="flex items-center">
+                    </div>
+                </a>
+                <a href="https://madrigalinside.com/"
+                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
+                    <div class="flex items-center">
                         <img width="278" height="107"
                              src="https://madrigalinside.com/wp-content/uploads/cropped-logo-flyff-universe-1-1.png"
                              class="attachment-full size-full" alt="" loading="lazy">
-                    </a>
-                </div>
-                <div
-                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-48 rounded-lg shadow-xl bg-gray-900 shadow-xl text-gray-300">
-                    <a href="https://flyffipedia.com/" class="flex items-center">
+                    </div>
+                </a>
+                <a href="https://flyffipedia.com/"
+                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
+                    <div class="flex items-center">
                         <img width="278" height="107"
                              src="{{ asset("/img/uflyff.png") }}"
                              class="attachment-full size-full" alt="" loading="lazy">
-                    </a>
-                </div>
+                    </div>
+                </a>
+                <div></div>
+                <a href="mentions"
+                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
+                    <div class="flex items-center">
+                        <div class="inline-block relative shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" class="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/>
+                            </svg>
+
+                        </div>
+                        <div class="ml-3 text-sm font-normal">
+                            <div class="text-2xl font-semibold flex justify-center text-white">Mentions légales</div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

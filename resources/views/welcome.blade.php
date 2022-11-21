@@ -34,8 +34,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css"/>
 </head>
-<body>
-<nav class="px-2 py-2 bg-black backdrop-blur-2xl bg-opacity-25">
+<body class="bg-black">
+<nav class="px-2 py-2 bg-neutral-900">
     <div class="container flex flex-wrap justify-center items-center mx-auto">
         <a href="{{ route('home') }}" class="flex items-center">
             <img src="{{asset('/img/logo-easis.png')}}" class="mr-3 h-6 sm:h-10" alt="Easis Logo">
@@ -148,14 +148,5 @@
 </footer>-->
 <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </body>
-
-<style>
-    html {
-        background-image: url({{asset('img/bg/Traseia.jpg')}});
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-</style>
 
 </html>

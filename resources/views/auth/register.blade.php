@@ -59,10 +59,7 @@
             </div>
         </form>
         <div class="mt-10 flex flex-col gap-2">
-            <div>Toutes les données sont chiffrée et protégées.</div>
-            <div>Pour toute demande de preuves, je me rendrait disponible afin de vous le montrer.</div>
-            <div>Aucune de vos données de seront utilisées à des fins commerciales.</div>
-            <div>Vous pouvez me contacter via pamp1n@proton.me.</div>
+            <a href="mentions" class="underline text-blue-400">Mentions légales</a>
         </div>
     </x-jet-authentication-card>
 </x-guest-layout>
