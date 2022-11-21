@@ -3,7 +3,7 @@
 
     <div>
         <div class="flex items-center justify-center mt-4">
-            <div class="grid md:grid-cols-3 grid-cols-2 mx-4 md:mx-0 md:w-1/2 gap-4 md:gap-6">
+            <div class="grid md:grid-cols-3 grid-cols-1 mx-4 md:mx-0 md:w-1/2 gap-4 md:gap-6">
                 <div
                     class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
                     <div class="flex items-center">
