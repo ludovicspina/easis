@@ -11,8 +11,6 @@ class Hdv2Controller extends Controller
         $items = Api::select('nameFr')->get();
         $icons = Api::select('icon')->get();
 
-        $all = Api::all();
-        dd($all);
         return view('new-hdv', compact('items', 'icons'));
     }
 

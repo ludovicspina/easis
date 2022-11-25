@@ -76,7 +76,22 @@ class ListingController extends Controller
         foreach ($allIds as $anId) {
             $groupIds[] = $anId;
             $counter += 1;
-            if ($counter == 300) {
+            if ($counter == 600) {
+                $tmp = json_decode(file_get_contents('https://api.flyff.com/item/' . implode(',', $groupIds)));
+                foreach ($tmp as $unique) {
+                    $post = new Api();
+                    $post->itemId = $unique->id;
+                    $post->nameFr = $unique->name->fr;
+                    $post->nameEn = $unique->name->en;
+                    $post->icon = $unique->icon;
+                    $post->testnumber = $counter;
+                    $post->save();
+                }
+                $counter = 0;
+                $groupIds = $void;
+            }
+
+            if ($anId == end($allIds)) {
                 $tmp = json_decode(file_get_contents('https://api.flyff.com/item/' . implode(',', $groupIds)));
                 foreach ($tmp as $unique) {
                     $post = new Api();
