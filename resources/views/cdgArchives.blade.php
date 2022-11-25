@@ -4,7 +4,7 @@
 
 
 
-
+@dd($clockItemsJson)
 
     <div>
         <div class="grid md:grid-cols-4">

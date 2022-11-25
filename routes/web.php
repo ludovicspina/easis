@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\API\ItemsController;
 use App\Http\Controllers\CdgController;
+use App\Http\Controllers\Hdv2Controller;
 use App\Http\Controllers\HdvController;
+use App\Http\Controllers\ListingController;
 use App\Http\Controllers\MembresController;
 use App\Models\Members;
 use Illuminate\Support\Facades\Route;
@@ -62,4 +65,12 @@ Route::view('/acolyte', 'classes/acolyte')->name('acolyte');
 Route::view('/magicien', 'classes/magicien')->name('magicien');
 
 
+Route::get('/listing', [ListingController::class, 'showAll'])->name('listing');
+Route::get('/listing', [ListingController::class, 'items'])->name('listing');
+Route::post('listingAdd', [ListingController::class, 'store'])->name('listingAdd');
 
+
+Route::get('/new-hdv', [Hdv2Controller::class, 'index'])->name('new-hdv');
+
+
+Route::apiResource('api/items', ItemsController::class);
