@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Api;
 use App\Models\Hdv;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -10,12 +11,16 @@ class HdvController extends Controller
 {
     public function index()
     {
+
+        $items = Api::select('nameFr')->get();
+        $icons = Api::select('icon')->get();
+
         $hdv = Hdv::select('*')
             ->where('isShowed', '=', 1)
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return view('hdv', compact('hdv'));
+        return view('hdv', compact('hdv', 'items', 'icons'));
     }
 
     public function getAll()

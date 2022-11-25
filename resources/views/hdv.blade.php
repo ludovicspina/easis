@@ -1,5 +1,16 @@
 @extends('welcome')
 @section('content')
+    <script
+        src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+    <script>
+        var items = {!! json_encode($items) !!};
+        iNames = [];
+        items.forEach(element => iNames.push(element.nameFr));
+
+        var icons = {!! json_encode($icons) !!};
+        iIcons = [];
+        icons.forEach(element => iIcons.push(element.icon));
+    </script>
     <div class="flex justify-center">
         <nav class="flex justify-center mt-1" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -29,463 +40,395 @@
             </ol>
         </nav>
     </div>
-
-    <div class="mb-2 flex justify-center text-3xl text-white font-bold">
-        Genèse
-    </div>
-
-    <div id="serverTab">
-        <div class="p-b rounded-lg" id="genese" role="tabpanel"
-             aria-labelledby="genese-tab">
-            <!-- Main modal -->
-            <div id="add-item-g" tabindex="-1" aria-hidden="true"
-                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-auto md:inset-0 h-modal md:h-full">
-                <div class="relative p-4 h-full md:h-auto">
-                    <!-- Modal content -->
-                    <div class="relative rounded-lg backdrop-blur-xl bg-opacity-10">
-                        <button type="button"
-                                class="absolute top-3 right-2.5 text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-black bg-opacity-40 backdrop-blur hover:text-white"
-                                data-modal-toggle="add-item-g">
-                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                      clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="sr-only">Fermer</span>
-                        </button>
-                        <div class="py-6 px-6 lg:px-8">
-
-                            <form autocomplete="off" action="{{ route('hdvAdd') }}" class="col-span-1 w-auto mt-4"
-                                  method="POST">
-                                @csrf
-                                <div class="mt-8 md:flex md:flex-col">
-                                    <div class="flex justify-evenly gap-10">
-                                        <div class="flex flex-col mb-4">
-                                            <div>
-                                                <input checked type="radio" value="1" name="typeRequete"
-                                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-800">
-                                                <label for="default-radio-1"
-                                                       class="ml-2 text-sm font-medium text-gray-300">Je vend un
-                                                    objet</label>
-                                            </div>
-                                            <div>
-                                                <input type="radio" value="0" name="typeRequete"
-                                                       class="w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-800">
-                                                <label for="default-radio-2"
-                                                       class="ml-2 text-sm font-medium text-gray-300">Je recherche un
-                                                    objet</label>
-                                            </div>
-                                        </div>
-                                        <div class="relative z-0 mb-6 w-48 group">
-                                            <input type="text" name="joueur" id="joueur"
-                                                   value="@if(auth()->user()){{ auth()->user()->name }}@endif"
-                                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                   placeholder=" " required/>
-                                            <label for="floating_last_name"
-                                                   class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Pseudo
-                                                IG</label>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <div class="flex justify-center gap-2">
-                                            <div class="relative z-0 mb-3 w-48 group">
-                                                <input type="text" name="objet" id="objet"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" " required/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Objet</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="niveau" id="niveau"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">+</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="quantite" id="quantite" value="1"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" " required/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Quantité</label>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-center gap-2">
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="for" id="for"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">FOR</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="end" id="end"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">END</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="dex" id="dex"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">DEX</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="int" id="int"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">INT</label>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-center gap-2">
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="eau" id="eau"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Eau</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="feu" id="feu"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Feu</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="terre" id="terre"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Terre</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="foudre" id="foudre"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Foudre</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="vent" id="vent"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Vent</label>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-center gap-2">
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="patk" id="patk"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
-                                                    ATK</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="pdef" id="pdef"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
-                                                    DEF</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="ppv" id="ppv"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
-                                                    PV</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="pmp" id="pmp"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
-                                                    PM</label>
-                                            </div>
-                                            <div class="relative z-0 mb-6 w-16 group">
-                                                <input type="number" name="ppf" id="ppf"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">%
-                                                    PF</label>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-center gap-2">
-                                            <div class="relative z-0 mb-6 w-64 group">
-                                                <input type="text" name="eveil" id="eveil"
-                                                       class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                       placeholder=" "/>
-                                                <label for="floating_first_name"
-                                                       class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Eveil</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-center gap-2">
-
-                                        <div class="relative z-0 mb-6 w-48 group">
-                                            <input type="number" name="prix" id="prix"
-                                                   class="block py-2.5 px-0 w-full text-sm text-gray-200 bg-transparent appearance-none focus:outline-none focus:ring-0 peer"
-                                                   placeholder=" " required/>
-                                            <label for="floating_first_name"
-                                                   class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Prix</label>
-                                        </div>
-                                    </div>
-
-                                    <div><input name="region" type="hidden" value="eu"></div>
-                                    <div><input name="serveur" type="hidden" value="genese"></div>
-                                    @if(auth()->user())
-                                        <div><input name="userId" type="hidden" value="{{ auth()->user()->id }}"></div>
-                                    @endif
-                                </div>
-                                <button type="submit"
-                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-80 sm:w-auto px-5 py-2.5 text-center">
-                                    Valider
-                                </button>
-                            </form>
+    @if(auth()->user())
+        <div class="p-2 grid md:grid-cols-3">
+            <form autocomplete="off" action="{{ route('hdvAdd') }}" class="col-span-2"
+                  method="POST">
+                @csrf
+                <div class="flex flex-col gap-2">
+                    <div class="flex flex-col">
+                        <div class="flex gap-2">
+                            <input checked type="radio" value="1" name="typeRequete">
+                            <label for="default-radio-1" class="text-neutral-300">Je vend un objet</label>
+                        </div>
+                        <div class="flex gap-2">
+                            <input type="radio" value="0" name="typeRequete">
+                            <label for="default-radio-2" class="text-neutral-300">Je recherche un objet</label>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="flex justify-center mt-4"><!-- Modal toggle -->
-                <div class="flex gap-10">
-                    @if(auth()->user())
-                        <button
-                            class="block text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-                            type="button" data-modal-toggle="add-item-g">
-                            Ajouter un objet
-                        </button>
-                    @else
-                        <div
-                            class="block text-white cursor-not-allowed focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-                            type="button">
-                            <a href="{{ route('register') }}">Connecter vous pour ajouter un objet</a>
-                        </div>
-                    @endif
-
+                    <div class="flex gap-1">
+                        <input required
+                               class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                               type="search" name="objet" id="autoComplete"
+                               dir="ltr" spellcheck=false autocorrect="off" placeholder="Nom de l'objet"
+                               autocomplete="off" autocapitalize="off" tabindex="1">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="text" name="joueur" value="@if(auth()->user()){{ auth()->user()->name }}@endif"
+                            placeholder="Pseudo">
+                    </div>
                     <div>
-                        <input id="filterInput" onkeyup="filter()" type="search" id="default-search"
-                               class="text-center w-64 text-sm rounded-lg bg-gray-800 placeholder-gray-400 text-white focus:ring-blue-500"
-                               placeholder="Rechercher" required>
+                        <input required
+                               class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                               type="number" name="prix" placeholder="Prix">
+                        <input required
+                               class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                               type="number" name="quantite" placeholder="Quantité">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="niveau" placeholder="Niveau d'objet" max="10">
+                    </div>
+                    <div>
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="for" placeholder="FOR" max="4">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="end" placeholder="END" max="4">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="dex" placeholder="DEX" max="4">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="int" placeholder="INT" max="4">
+                    </div>
+                    <div>
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="eau" placeholder="EAU" max="10">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="feu" placeholder="FEU" max="10">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="terre" placeholder="TERRE" max="10">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="foudre" placeholder="FOUDRE" max="10">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="vent" placeholder="VENT" max="10">
+                    </div>
+                    <div>
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="patk" placeholder="%ATK" max="28">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="pdef" placeholder="%DEF" max="28">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="ppv" placeholder="%PV" max="28">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="pmp" placeholder="%PM" max="28">
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="ppf" placeholder="%PF" max="28">
+                    </div>
+                    <div>
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="text" name="eveil" placeholder="Eveil">
+                    </div>
+
+                    @if(auth()->user())
+                        <input
+                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="text" name="userId" value="{{ auth()->user()->id }}" hidden>
+                    @endif
+                    <input
+                        class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                        type="text" name="region" value="eu" hidden>
+                    <input
+                        class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                        type="text" name="serveur" value="genese" hidden>
+                </div>
+                <button type="submit"
+                        class="mt-2 text-neutral-900 font-bold px-4 py-2 bg-white border border-neutral-300">
+                    Valider
+                </button>
+            </form>
+        </div>
+    @else
+        <div class="p-2 flex justify-center">
+            <a class="text-neutral-200 text-xl animate-pulse hover:underline" href="login">Connectez vous pour ajouter un poste.</a>
+        </div>
+    @endif
+    <div class="flex justify-center mt-4">
+        <input
+            id="searchbar" onkeyup="search_poste()"
+            class="rounded-full bg-neutral-700 border border-neutral-600 placeholder:text-neutral-200 px-2 py-1 flex justify-center outline-none text-white"
+            placeholder="Rechercher ...">
+    </div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 p-4 gap-4">
+        @foreach($hdv as $item)
+            <div class="post list-none flex-col justify-evenly p-2 text-neutral-300 bg-neutral-800 rounded-xl border border-neutral-600">
+                <div class="flex items-center justify-center gap-2">
+                    <img id="icon-{{ $loop->index }}" src="#"
+                         onerror="this.onerror=null; this.src='https://api.flyff.com/image/item/syssysquednawag.png'">
+                    <div class="flex gap-1 text-neutral-200 font-semibold">
+                        <div id="item-{{ $loop->index }}">{{ $item->objet }}</div>
+                        <div>@if($item->niveau !== null)
+                                + {{ $item->niveau }}
+                            @endif</div>
                     </div>
                 </div>
-            </div>
-
-            <div class="mt-3 md:grid md:grid-cols-10 gap-2">
-                <div></div>
-                <div class="col-span-8 md:overflow-hidden overflow-x-scroll">
-                    <table id="filterTable" class="col-span-2 text-sm text-left text-gray-40 md:w-full md:mx-4">
-                        <thead class="text-xs uppercase bg-neutral-800 text-gray-400 mt-4">
-                        <tr>
-                            <th class="py-3 px-6 text-center">
-                                Objet
-                            </th>
-                            <th class="py-3 px-6 text-center">
-                                Prix / Unité
-                            </th>
-                            <th class="py-3 px-6 text-center">
-                                QTT
-                            </th>
-                            <th class="py-3 px-6 text-center">
-                                Informations
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($hdv as $item)
-                            <tr class="bg-neutral-900 backdrop-blur">
-                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">
-                                    <div class="flex flex-col  whitespace-normal max-w-xl">
-                                        <div class="underline text-base">
-                                            {{ $item->objet }}  @if($item->niveau !== null)
-                                                + {{ $item->niveau }}
-                                            @endif
-                                        </div>
-                                        <div class="text-yellow-200">
-                                            @if($item->for !== null)
-                                                FOR + {{ $item->for }}
-                                            @endif
-                                            @if($item->end !== null)
-                                                END + {{ $item->end }}
-                                            @endif
-                                            @if($item->dex !== null)
-                                                DEX + {{ $item->dex }}
-                                            @endif
-                                            @if($item->int !== null)
-                                                INT + {{ $item->int }}
-                                            @endif
-                                        </div>
-                                        <div class="text-blue-200">
-                                            @if($item->feu !== null)
-                                                FEU + {{ $item->feu }}
-                                            @endif
-                                            @if($item->eau !== null)
-                                                EAU + {{ $item->eau }}
-                                            @endif
-                                            @if($item->vent !== null)
-                                                VENT + {{ $item->vent }}
-                                            @endif
-                                            @if($item->foudre !== null)
-                                                FOUDRE + {{ $item->foudre }}
-                                            @endif
-                                            @if($item->terre !== null)
-                                                TERRE + {{ $item->terre }}
-                                            @endif
-                                        </div>
-                                        <div class="text-red-200">
-                                            @if($item->patk !== null)
-                                                ATK {{ $item->patk }}%
-                                            @endif
-                                            @if($item->pdef !== null)
-                                                DEF {{ $item->pdef }}%
-                                            @endif
-                                            @if($item->ppv !== null)
-                                                PV {{ $item->ppv }}%
-                                            @endif
-                                            @if($item->pmp !== null)
-                                                PM {{ $item->pmp }}%
-                                            @endif
-                                            @if($item->ppf !== null)
-                                                PF {{ $item->ppf }}%
-                                            @endif
-                                        </div>
-                                        <div class="text-pink-600">
-                                            @if($item->eveil !== null)
-                                                {{ $item->eveil }}
-                                            @endif
-                                        </div>
-                                    </div>
-
-
-                                </td>
-                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">{{ number_format($item->prix) }}</td>
-                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">{{ $item->quantite }}</td>
-                                <td class="font-medium text-gray-300 bg-black bg-opacity-40 backdrop-blur text-center">
-                                    <div class="flex md:flex-row flex-col gap-1 md:gap-0 md:justify-center ">
-                                        <button>
-                                    <span
-                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-blue-200 text-blue-900">{{ $item->joueur }}</span>
-                                        </button>
-                                        @if($item->typeRequete == 1)
-                                            <button>
+                @if(($item->prix == 1) OR ($item->prix == 0) OR ($item->prix == -1))
+                    <div class="flex justify-center">Offre libre</div>
+                @else
+                    <div class="flex justify-center">{{ number_format($item->prix, 0, " ", " ") }} penyas</div>
+                @endif
+                <div class="flex gap-2 justify-center">
+                    <div class="text-yellow-200">
+                        @if($item->for !== null)
+                            FOR + {{ $item->for }}
+                        @endif
+                        @if($item->end !== null)
+                            END + {{ $item->end }}
+                        @endif
+                        @if($item->dex !== null)
+                            DEX + {{ $item->dex }}
+                        @endif
+                        @if($item->int !== null)
+                            INT + {{ $item->int }}
+                        @endif
+                    </div>
+                    <div class="text-blue-200">
+                        @if($item->feu !== null)
+                            FEU + {{ $item->feu }}
+                        @endif
+                        @if($item->eau !== null)
+                            EAU + {{ $item->eau }}
+                        @endif
+                        @if($item->vent !== null)
+                            VENT + {{ $item->vent }}
+                        @endif
+                        @if($item->foudre !== null)
+                            FOUDRE + {{ $item->foudre }}
+                        @endif
+                        @if($item->terre !== null)
+                            TERRE + {{ $item->terre }}
+                        @endif
+                    </div>
+                    <div class="text-red-200">
+                        @if($item->patk !== null)
+                            ATK {{ $item->patk }}%
+                        @endif
+                        @if($item->pdef !== null)
+                            DEF {{ $item->pdef }}%
+                        @endif
+                        @if($item->ppv !== null)
+                            PV {{ $item->ppv }}%
+                        @endif
+                        @if($item->pmp !== null)
+                            PM {{ $item->pmp }}%
+                        @endif
+                        @if($item->ppf !== null)
+                            PF {{ $item->ppf }}%
+                        @endif
+                    </div>
+                </div>
+                <div class="text-pink-600">
+                    @if($item->eveil !== null)
+                        {{ $item->eveil }}
+                    @endif
+                </div>
+                <div class="flex justify-center">
+                    @if($item->typeRequete == 1)
+                        <button>
                                         <span
                                             class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-200 text-green-900">Vente</span>
-                                            </button>
-                                        @else
-                                            <button>
+                        </button>
+                    @else
+                        <button>
                                         <span
                                             class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-indigo-200 text-indigo-900">Achat</span>
-                                            </button>
-                                        @endif
-                                        @if(auth()->user())
-                                            @if(auth()->user()->id == $item->userId)
-                                                <form autocomplete="off"
-                                                      action="{{ route('hdvRemove', $item->id) }}"
-                                                      method="POST">
-                                                    @csrf
-                                                    @method('put')
-                                                    <button type="submit">
+                        </button>
+                    @endif
+
+                    <button>
+                                    <span
+                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-blue-200 text-blue-900">{{ $item->joueur }}</span>
+                    </button>
+
+                    @if(auth()->user())
+                        @if(auth()->user()->id == $item->userId)
+                            <form autocomplete="off"
+                                  action="{{ route('hdvRemove', $item->id) }}"
+                                  method="POST">
+                                @csrf
+                                @method('put')
+                                <button type="submit">
                                                     <span
                                                         class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-red-200 text-red-900">Supprimer</span>
-                                                    </button>
-                                                </form>
-                                            @endif
-                                        @endif
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                                </button>
+                            </form>
+                        @endif
+                    @endif
                 </div>
-                <div></div>
             </div>
+            <script>
+                function getImage(item) {
+                    iNames.forEach(function callback(element, i) {
+                        if (item === element) {
+                            return document.getElementById(("icon-{!! $loop->index !!}")).src = "https://api.flyff.com/image/item/" + iIcons[i]
+                        }
+                    })
+                }
 
+                getImage(document.getElementById("item-{!! $loop->index !!}").textContent)
+                console.log(document.getElementById("item-{!! $loop->index !!}").textContent)
+            </script>
+        @endforeach
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+        <script>
 
-        </div>
-    </div>
-
-    <style>
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        .popover__wrapper {
-            position: relative;
-        }
-
-        .popover__content {
-            opacity: 0;
-            visibility: hidden;
-            transform: translate(0, 10px);
-        }
-
-        .popover__content:before {
-            transition-duration: 0.3s;
-            transition-property: transform;
-        }
-
-        .popover__wrapper:hover .popover__content {
-            z-index: 10;
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0, -20px);
-        }
-    </style>
-    <script>
-        function filter() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("filterInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("filterTable");
-            tr = table.getElementsByTagName("tr");
-
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-
-                td0 = tr[i].getElementsByTagName("td")[0];
-                td1 = tr[i].getElementsByTagName("td")[1];
-                td2 = tr[i].getElementsByTagName("td")[2];
-                td3 = tr[i].getElementsByTagName("td")[3];
-                if (td0) {
-                    txtValue0 = td0.textContent || td0.innerText;
-                    txtValue1 = td1.textContent || td1.innerText;
-                    txtValue2 = td2.textContent || td2.innerText;
-                    txtValue3 = td3.textContent || td3.innerText;
-                    if (txtValue0.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        if (txtValue1.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            if (txtValue2.toUpperCase().indexOf(filter) > -1) {
-                                tr[i].style.display = "";
-                            } else {
-                                if (txtValue3.toUpperCase().indexOf(filter) > -1) {
-                                    tr[i].style.display = "";
-                                } else {
-                                    tr[i].style.display = "none";
+            const autoCompleteJS = new autoComplete({
+                data: {
+                    src: iNames,
+                    cache: true,
+                },
+                resultItem: {
+                    highlight: true
+                },
+                events: {
+                    input: {
+                        selection: (event) => {
+                            const selection = event.detail.selection.value;
+                            autoCompleteJS.input.value = selection;
+                            iNames.forEach(function callback(element, i) {
+                                if (selection === element) {
+                                    document.getElementById(('autoCompleteId')).value = i
+                                    document.getElementById(('autoCompleteIcon')).src = "https://api.flyff.com/image/item/" + iIcons[i]
+                                    console.log(iIcons)
+                                    console.log(itemNames)
                                 }
-                            }
+                            })
+
+
                         }
                     }
+                }
+            });
+
+        </script>
+    </div>
+    <style>
+        #autoComplete_list_1 {
+            width: 13em;
+            background-color: white;
+            position: fixed;
+            border-bottom-left-radius: 0.4em;
+            border-bottom-right-radius: 0.4em;
+        }
+
+        #autoComplete_list_1:hover {
+            cursor: pointer;
+        }
+
+        #autoComplete_result_0:hover {
+            background-color: #9ca3af;
+            border-bottom-left-radius: 0.4em;
+            border-bottom-right-radius: 0.4em;
+        }
+
+        #autoComplete_result_1:hover {
+            background-color: #9ca3af;
+            border-bottom-left-radius: 0.4em;
+            border-bottom-right-radius: 0.4em;
+        }
+
+        #autoComplete_result_2:hover {
+            background-color: #9ca3af;
+            border-bottom-left-radius: 0.4em;
+            border-bottom-right-radius: 0.4em;
+        }
+
+        #autoComplete_result_3:hover {
+            background-color: #9ca3af;
+            border-bottom-left-radius: 0.4em;
+            border-bottom-right-radius: 0.4em;
+        }
+
+        #autoComplete_result_4:hover {
+            background-color: #9ca3af;
+            border-bottom-left-radius: 0.4em;
+            border-bottom-right-radius: 0.4em;
+        }
+
+        mark {
+            background-color: rgba(94, 154, 186, 0.32);
+        }
+    </style>
+
+    <script>
+        var rules = {
+            a: "àáâãäå",
+            A: "ÀÁÂ",
+            e: "èéêë",
+            E: "ÈÉÊË",
+            i: "ìíîï",
+            I: "ÌÍÎÏ",
+            o: "òóôõöø",
+            O: "ÒÓÔÕÖØ",
+            u: "ùúûü",
+            U: "ÙÚÛÜ",
+            y: "ÿ",
+            c: "ç",
+            C: "Ç",
+            n: "ñ",
+            N: "Ñ"
+        };
+
+        function getJSONKey(key) {
+            for (acc in rules) {
+                if (rules[acc].indexOf(key) > -1) {
+                    return acc
+                }
+            }
+        }
+
+        function replaceSpec(Texte) {
+            regstring = ""
+            for (acc in rules) {
+                regstring += rules[acc]
+            }
+            reg = new RegExp("[" + regstring + "]", "g")
+            return Texte.replace(reg, function (t) {
+                return getJSONKey(t)
+            });
+        }
+
+
+        // JavaScript code
+        function search_poste() {
+            let input = replaceSpec(document.getElementById('searchbar').value.toLowerCase())
+            let x = document.getElementsByClassName('post');
+
+            for (i = 0; i < x.length; i++) {
+
+                if (!replaceSpec(x[i].innerHTML).toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "list-item";
                 }
             }
         }
     </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 0.2em;
+            background-color: rgba(255, 255, 255, 0.30);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.60);
+            border-radius: 10em;
+        }
+
+    </style>
 
 @stop
