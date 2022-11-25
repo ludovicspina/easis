@@ -41,7 +41,7 @@
         </nav>
     </div>
     @if(auth()->user())
-        <div class="p-2 grid md:grid-cols-3">
+        <div class="p-2 grid md:grid-cols-3 grid-cols-1">
             <form autocomplete="off" action="{{ route('hdvAdd') }}" class="col-span-2"
                   method="POST">
                 @csrf
