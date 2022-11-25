@@ -21,11 +21,6 @@
             var items = {!! json_encode($items) !!};
             iNames = [];
             items.forEach(element => iNames.push(element.nameFr));
-            let itemNames = [];
-            for (let i = 0; i < iNames.length; i++) {
-                if (itemNames.indexOf(iNames[i]) === -1)
-                    itemNames.push(iNames[i])
-            }
 
             var icons = {!! json_encode($icons) !!};
             iIcons = [];
@@ -38,7 +33,7 @@
             const autoCompleteJS = new autoComplete({
                 placeHolder: "Rechercher des objets...",
                 data: {
-                    src: itemNames,
+                    src: iNames,
                     cache: true,
                 },
                 resultItem: {
@@ -49,7 +44,7 @@
                         selection: (event) => {
                             const selection = event.detail.selection.value;
                             autoCompleteJS.input.value = selection;
-                            itemNames.forEach(function callback(element, i) {
+                            iNames.forEach(function callback(element, i) {
                                 if (selection === element) {
                                     document.getElementById(('autoCompleteId')).value = i
                                     document.getElementById(('autoCompleteIcon')).src = "https://api.flyff.com/image/item/" + iIcons[i]

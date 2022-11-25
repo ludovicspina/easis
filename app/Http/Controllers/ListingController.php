@@ -64,9 +64,25 @@ class ListingController extends Controller
         DB::table('apis')
             ->delete();
 
-        /* foreach (range(0, 4600) as $index) {
+        /* foreach (range(0, 1000) as $index) {
             if (array_key_exists($index, $allIds)) {
+                $groupIds[] = $allIds[$index];
+                $counter += 1;
+                if ($counter == 1000) {
+                    $tmp = json_decode(file_get_contents('https://api.flyff.com/item/' . implode(',', $groupIds)));
+                    foreach ($tmp as $unique) {
+                        $post = new Api();
+                        $post->itemId = $unique->id;
+                        $post->nameFr = $unique->name->fr;
+                        $post->nameEn = $unique->name->en;
+                        $post->icon = $unique->icon;
+                        $post->testnumber = $index;
+                        $post->save();
+                    }
 
+                    $counter = 0;
+                    $groupIds = $void;
+                }
             } else {
                 break;
             }
