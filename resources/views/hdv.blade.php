@@ -229,7 +229,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="text-pink-600">
+                <div class="text-pink-600 text-center">
                     @if($item->eveil !== null)
                         {{ $item->eveil }}
                     @endif
