@@ -10,13 +10,6 @@
         </div>
 
 
-        @foreach($items as $unit)
-        <div>{{$loop->index}}</div>
-        @endforeach
-
-
-
-
         <img id="autoCompleteIcon" src="#" alt="itemIcon">
 
         <script
