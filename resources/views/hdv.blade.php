@@ -56,7 +56,7 @@
                             <label for="default-radio-2" class="text-neutral-300">Je recherche un objet</label>
                         </div>
                     </div>
-                    <div class="flex gap-1">
+                    <div class="flex gap-1">d
                         <input required
                                class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
                                type="search" name="objet" id="autoComplete"
@@ -78,36 +78,60 @@
                             class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
                             type="number" name="niveau" placeholder="Niveau d'objet" max="10">
                     </div>
-                    <div>
+                    <div class="text-neutral-300 flex flex-col">
+
+                        <div>
+                            <label>
+                                For
+                                <input type="radio" value="for" name="statRadio">
+                            </label>
+                            <label>
+                                End
+                                <input type="radio" value="end" name="statRadio">
+                            </label>
+                            <label>
+                                Dex
+                                <input type="radio" value="dex" name="statRadio">
+                            </label>
+                            <label>
+                                Int
+                                <input type="radio" value="int" name="statRadio">
+                            </label>
+                        </div>
+
                         <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="for" placeholder="FOR" max="4">
-                        <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="end" placeholder="END" max="4">
-                        <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="dex" placeholder="DEX" max="4">
-                        <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="int" placeholder="INT" max="4">
+                            class="w-48 bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="statInput" max="4">
+
                     </div>
-                    <div>
+                    <div class="text-neutral-300 flex flex-col">
+
+                        <div>
+                            <label>
+                                Eau
+                                <input type="radio" value="eau" name="elementRadio">
+                            </label>
+                            <label>
+                                Feu
+                                <input type="radio" value="feu" name="elementRadio">
+                            </label>
+                            <label>
+                                Terre
+                                <input type="radio" value="terre" name="elementRadio">
+                            </label>
+                            <label>
+                                Foudre
+                                <input type="radio" value="foudre" name="elementRadio">
+                            </label>
+                            <label>
+                                Vent
+                                <input type="radio" value="foudre" name="elementRadio">
+                            </label>
+                        </div>
+
                         <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="eau" placeholder="EAU" max="10">
-                        <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="feu" placeholder="FEU" max="10">
-                        <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="terre" placeholder="TERRE" max="10">
-                        <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="foudre" placeholder="FOUDRE" max="10">
-                        <input
-                            class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="vent" placeholder="VENT" max="10">
+                            class="w-48 bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
+                            type="number" name="elementInput" max="10">
                     </div>
                     <div>
                         <input
@@ -152,7 +176,8 @@
         </div>
     @else
         <div class="p-2 flex justify-center">
-            <a class="text-neutral-200 text-xl animate-pulse hover:underline" href="login">Connectez vous pour ajouter un poste.</a>
+            <a class="text-neutral-200 text-xl animate-pulse hover:underline" href="login">Connectez vous pour ajouter
+                un poste.</a>
         </div>
     @endif
     <div class="flex justify-center mt-4">
@@ -163,7 +188,8 @@
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-1 p-4 gap-4">
         @foreach($hdv as $item)
-            <div class="post list-none flex-col justify-evenly p-2 text-neutral-300 bg-neutral-800 rounded-xl border border-neutral-600">
+            <div
+                class="post list-none flex-col justify-evenly p-2 text-neutral-300 bg-neutral-800 rounded-xl border border-neutral-600">
                 <div class="flex items-center justify-center gap-2">
                     <img id="icon-{{ $loop->index }}" src="#"
                          onerror="this.onerror=null; this.src='https://api.flyff.com/image/item/syssysquednawag.png'">

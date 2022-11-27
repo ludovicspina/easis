@@ -14,13 +14,14 @@ class HdvController extends Controller
 
         $items = Api::select('nameFr')->get();
         $icons = Api::select('icon')->get();
+        $itemsId = Api::select('itemId')->get();
 
         $hdv = Hdv::select('*')
             ->where('isShowed', '=', 1)
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return view('hdv', compact('hdv', 'items', 'icons'));
+        return view('hdv', compact('hdv', 'items', 'icons', 'itemsId'));
     }
 
     public function getAll()
@@ -35,6 +36,50 @@ class HdvController extends Controller
 
     public function store(Request $request)
     {
+
+
+        $statRadio = $request->input('statRadio');
+        $statInput = $request->input('statInput');
+
+        $for = null;
+        $end = null;
+        $dex = null;
+        $int = null;
+
+        if ($statRadio == 'for') {
+            $for = $statInput;
+        } elseif ($statRadio == 'end') {
+            $end = $statInput;
+        } elseif ($statRadio == 'dex') {
+            $dex = $statInput;
+        } elseif ($statRadio == 'int') {
+            $int = $statInput;
+        }
+
+        $elementRadio = $request->input('elementRadio');
+        $elementInput = $request->input('elementInput');
+
+        $eau = null;
+        $feu = null;
+        $terre = null;
+        $foudre = null;
+        $vent = null;
+
+        if ($elementRadio == 'eau') {
+            $eau = $elementInput;
+        } elseif ($elementRadio == 'feu') {
+            $feu = $elementInput;
+        } elseif ($elementRadio == 'terre') {
+            $terre = $elementInput;
+        } elseif ($elementRadio == 'foudre') {
+            $foudre = $elementInput;
+        } elseif ($elementRadio == 'vent') {
+            $vent = $elementInput;
+        }
+
+
+
+
         $post = new Hdv();
         $post->objet = $request->input('objet');
         $post->joueur = $request->input('joueur');
@@ -43,17 +88,17 @@ class HdvController extends Controller
         $post->typeRequete = $request->input('typeRequete');
         $post->region = $request->input('region');
         $post->serveur = $request->input('serveur');
-        $post->for = $request->input('for');
-        $post->end = $request->input('end');
-        $post->dex = $request->input('dex');
-        $post->int = $request->input('int');
+        $post->for = $for;
+        $post->end = $end;
+        $post->dex = $dex;
+        $post->int = $int;
         $post->eveil = $request->input('eveil');
         $post->niveau = $request->input('niveau');
-        $post->eau = $request->input('eau');
-        $post->feu = $request->input('feu');
-        $post->terre = $request->input('terre');
-        $post->foudre = $request->input('foudre');
-        $post->vent = $request->input('vent');
+        $post->eau = $eau;
+        $post->feu = $feu;
+        $post->terre = $terre;
+        $post->foudre = $foudre;
+        $post->vent = $vent;
         $post->userId = $request->input('userId');
         $post->patk = $request->input('patk');
         $post->pdef = $request->input('pdef');
