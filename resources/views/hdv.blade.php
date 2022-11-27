@@ -76,7 +76,7 @@
                                type="number" name="quantite" placeholder="Quantité">
                         <input
                             class="bg-transparent border-neutral-300 text-neutral-300 font-bold focus:ring-neutral-200 focus:border-neutral-200"
-                            type="number" name="niveau" placeholder="Niveau d'objet" max="10">
+                            type="number" name="niveau" placeholder="Niveau d'amélioration" max="10">
                     </div>
                     <div class="text-neutral-300 flex flex-col">
 
