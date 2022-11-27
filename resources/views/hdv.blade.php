@@ -279,7 +279,7 @@
                     </button>
 
                     @if(auth()->user())
-                        @if(auth()->user()->id == $item->userId)
+                        @if((auth()->user()->id == $item->userId) OR (auth()->user()->role == 2))
                             <form autocomplete="off"
                                   action="{{ route('hdvRemove', $item->id) }}"
                                   method="POST">
