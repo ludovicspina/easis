@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ItemsController;
 use App\Http\Controllers\CdgController;
+use App\Http\Controllers\ClassesStatsController;
 use App\Http\Controllers\Hdv2Controller;
 use App\Http\Controllers\HdvController;
 use App\Http\Controllers\ListingController;
@@ -63,6 +64,9 @@ Route::view('/mercenaire', 'classes/mercenaire')->name('mercenaire');
 Route::view('/acrobate', 'classes/acrobate')->name('acrobate');
 Route::view('/acolyte', 'classes/acolyte')->name('acolyte');
 Route::view('/magicien', 'classes/magicien')->name('magicien');
+
+
+Route::get('/theorycraft', [ClassesStatsController::class,'index'])->name('theorycraft');
 
 
 Route::get('/listing', [ListingController::class, 'showAll'])->name('listing');
