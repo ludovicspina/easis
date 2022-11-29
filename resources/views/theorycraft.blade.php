@@ -60,6 +60,8 @@
                 </div>
             </div>
             <a onclick="calc()" class="cursor-pointer w-32 text-center bg-neutral-200 rounded p-2 text-neutral-800">Calculer</a>
+            <a onclick="history.go(0);" class="cursor-pointer w-32 text-center bg-neutral-200 rounded p-2 text-neutral-800">Nettoyer</a>
+
         </div>
     </div>
 
