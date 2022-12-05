@@ -297,7 +297,7 @@
             <script>
                 function getImage(item) {
                     iNames.forEach(function callback(element, i) {
-                        if (item === element) {
+                        if (item.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase() === element.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase()) {
                             return document.getElementById(("icon-{!! $loop->index !!}")).src = "https://api.flyff.com/image/item/" + iIcons[i]
                         }
                     })
@@ -310,6 +310,8 @@
         <script
             src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
         <script>
+
+
 
             const autoCompleteJS = new autoComplete({
                 data: {

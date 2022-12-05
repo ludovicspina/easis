@@ -64,6 +64,7 @@ Route::view('/mercenaire', 'classes/mercenaire')->name('mercenaire');
 Route::view('/acrobate', 'classes/acrobate')->name('acrobate');
 Route::view('/acolyte', 'classes/acolyte')->name('acolyte');
 Route::view('/magicien', 'classes/magicien')->name('magicien');
+Route::view('/blob', 'blob')->name('blob');
 
 
 Route::get('/theorycraft', [ClassesStatsController::class,'index'])->name('theorycraft');
