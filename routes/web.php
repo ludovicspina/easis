@@ -25,8 +25,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::view('/', 'home')->name('home');
-
 Route::view('/mentions', 'mentions')->name('mentions');
 
 Route::get('/', [HdvController::class, 'getAll'])->name('home');

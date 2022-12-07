@@ -35,16 +35,16 @@
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css"/>
 </head>
 <body class="bg-black">
-<nav class="px-2 py-2 bg-neutral-900">
-    <div class="container flex flex-wrap justify-center items-center mx-auto">
-        <a href="{{ route('home') }}" class="flex items-center">
-            <img src="{{asset('/img/logo-easis.png')}}" class="mr-3 h-6 sm:h-10" alt="Easis Logo">
-            <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Easis</span>
-        </a>
-    </div>
-</nav>
-
 @if(Route::current()->getName() !== 'home')
+    <nav class="px-2 py-2 bg-neutral-900">
+        <div class="container flex flex-wrap justify-center items-center mx-auto">
+            <a href="{{ route('home') }}" class="flex items-center">
+                <img src="{{asset('/img/logo-easis.png')}}" class="mr-3 h-6 sm:h-10" alt="Easis Logo">
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Easis</span>
+            </a>
+        </div>
+    </nav>
+
     <div class="flex justify-center mt-2">
         <div id="toast-notification"
              class="md:absolute md:right-5 md:top-20 p-3 w-full max-w-xs rounded-lg shadow bg-gray-900 shadow-xl bg-opacity-75 text-gray-300"
@@ -88,6 +88,10 @@
         </div>
     </div>
 @endif
+
+
+
+
 
 <!-- Main L -->
 <div id="userModal" tabindex="-1" aria-hidden="true"

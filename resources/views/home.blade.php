@@ -2,85 +2,112 @@
 @section('content')
 
     <div>
-        <div class="flex items-center justify-center mt-4">
-            <div class="grid md:grid-cols-3 grid-cols-1 mx-4 md:mx-0 md:w-1/2 gap-4 md:gap-6">
-                <div
-                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
-                    <div class="flex items-center">
-                        <div class="inline-block relative shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" class="z-10 w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
-                            </svg>
-                        </div>
-                        @if(Auth::user())
-                            <div class="ml-3 text-sm font-normal">
-                                <div>
-                                    <div class="md:text-xl font-semibold underline text-white">Connecté</div>
-                                    <div class="md:text-xl font-semibold text-white">{{ Auth::user()->name }}</div>
-                                </div>
-                                <div class="md:text-lg text-neutral-300 font-normal">{{ Auth::user()->email }}</div>
-                                <form action="{{ route('logout') }}"
-                                      method="POST">
-                                    @csrf
-                                    <button type="submit"
-                                            class="md:text-base hover:underline hover:text-red-700 text-red-500 font-normal">
-                                        Se déconnecter
-                                    </button>
-                                </form>
-                            </div>
-                        @else
-                            <div class="ml-3 text-sm font-normal">
-                                <div class="text-xl font-semibold underline text-white">Déconnecté</div>
-                                <div class="flex gap-1">
-                                    <a href="{{ route('login') }}"
-                                       class="hover:underline hover:text-blue-700 text-lg text-blue-500 font-normal">Se
-                                        connecter</a>
-                                    <div class="text-lg">ou</div>
-                                    <a href="{{ route('register') }}"
-                                       class="hover:underline hover:text-blue-700 text-lg text-blue-500 font-normal">s'inscrire</a>
-                                </div>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <a href="hdv" style="background-image: url({{asset('wealth-2.jpg')}}); background-size: cover"
-                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg drop-shadow backdrop-blur shadow-xl text-gray-300">
-                    <div class="flex items-center backdrop-blur-sm rounded-xl px-3">
-                        <div class="inline-block relative shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M14.25 7.756a4.5 4.5 0 100 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div class="ml-3 text-sm font-normal">
-                            <div class="md:text-3xl font-semibold text-white">Hotel de vente</div>
+        <div class="flex flex-col md:flex-row md:justify-between md:mx-48 md:mt-20">
+            <div class="mt-4 flex md:flex-none justify-center">
+                <a href="{{ route('home') }}" class="flex items-center">
+                    <img src="{{asset('/img/logo-easis.png')}}" class="hover:animate-spin md:mr-3 h-10 sm:h-20"
+                         alt="Easis Logo">
+                    <span class="self-center text-4xl font-semibold whitespace-nowrap text-white">Easis</span>
+                </a>
+            </div>
 
-                            @if($hdvCount == 0)
-                                <div class="md:text-xl text-neutral-300 font-normal">Aucun nouvel objet</div>
-                            @elseif($hdvCount == 1)
-                                <div class="md:text-xl text-neutral-300 font-normal">{{ $hdvCount }} nouvel objet</div>
+            <div class="flex justify-center mt-16 md:mt-0">
+                <div class="flex flex-col md:flex-none justify-center md:mt-2">
+                    <div id="toast-notification"
+                         class="-translate-y-8 p-3 w-full max-w-xs rounded-lg shadow bg-gray-900 shadow-xl bg-opacity-75 text-gray-300"
+                         role="alert">
+                        <div class="flex items-center">
+                            <div class="inline-block relative shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5"
+                                     stroke="currentColor" class="z-10 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                                </svg>
+                            </div>
+                            @if(Auth::user())
+                                <div class="ml-3 text-sm font-normal">
+                                    <div class="text-sm font-semibold underline text-white">Connecté en tant
+                                        que {{ Auth::user()->name }}</div>
+                                    <div class="text-sm text-neutral-300 font-normal">{{ Auth::user()->email }}</div>
+                                    <form action="{{ route('logout') }}"
+                                          method="POST">
+                                        @csrf
+                                        <button type="submit"
+                                                class="text-sm hover:underline hover:text-red-700 text-red-500 font-normal">
+                                            Se déconnecter
+                                        </button>
+                                    </form>
+                                </div>
                             @else
-                                <div class="md:text-xl text-neutral-300 font-normal">{{ $hdvCount }} nouveaux objets
+                                <div class="ml-3 text-sm font-normal">
+                                    <div class="text-sm font-semibold underline text-white">Déconnecté</div>
+                                    <div class="flex gap-1">
+                                        <a href="{{ route('login') }}"
+                                           class="hover:underline hover:text-blue-700 text-sm text-blue-500 font-normal">Se
+                                            connecter</a>
+                                        <div>ou</div>
+                                        <a href="{{ route('register') }}"
+                                           class="hover:underline hover:text-blue-700 text-sm text-blue-500 font-normal">s'inscrire</a>
+                                    </div>
                                 </div>
                             @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        </div>
+
+            <div class="flex justify-center items-center gap-1 md:flex-none text-neutral-300">
+                <span>
+                    <a href="https://discord.gg/kt75BpeqtV" class="hover:underline">Discord</a>
+                </span>
+                <span>-</span>
+                <span><a href="mentions" class="hover:underline">Mentions légales</a></span>
+            </div>
+
+
+        </div>
+
+
+        <div class="flex flex-col md:flex-row justify-between text-neutral-200 md:mx-96 md:mt-16 mt-8">
+            <div>
+                <div class="text-xl md:ml-8 mb-2 underline text-center md:text-end">Hotel de vente</div>
+                <div class="mb-1 flex flex-col gap-1">
+                    <div class="text-lg text-center md:text-end">Dernières annonces :</div>
+                    <div class="flex justify-center md:justify-start gap-2">
+                        <img style="height: 1.6em" src="https://api.flyff.com/image/item/{{ $iconsItems[0]->icon }}"><div>{{ $lastPost[0]->objet }}</div>
                     </div>
-                </a>
-                <a href="https://discord.gg/kt75BpeqtV" style="background-image: url({{asset('discord.png')}}); background-size: cover; background-position: center"
-                   class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
-                    <div class="flex items-center">
-                        <div class="inline-block relative shrink-0">
-                            <img src="{{ asset("/img/logo-easis.png") }}" class="w-10 h-10">
-                        </div>
-                        <div class="ml-3 text-sm font-normal">
-                            <div class="md:text-3xl font-semibold text-white"></div>
-                        </div>
+                    <div class="flex justify-center md:justify-start gap-2">
+                        <img style="height: 1.6em" src="https://api.flyff.com/image/item/{{ $iconsItems[1]->icon }}"><div>{{ $lastPost[1]->objet }}</div>
                     </div>
-                </a>
+                    <div class="flex justify-center md:justify-start gap-2">
+                        <img style="height: 1.6em" src="https://api.flyff.com/image/item/{{ $iconsItems[2]->icon }}"><div>{{ $lastPost[2]->objet }}</div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="{{ route('hdv') }}" class="hover:cursor-pointer hover:bg-amber-400 md:invisible visible mt-6 flex justify-center">
+                <input type="button" onclick="{{ route('hdv') }}" class="animate-pulse inline-block px-10 py-4 border-2 border-yellow-500 text-yellow-500 font-medium leading-tight uppercase rounded hover:bg-black hover:bg-opacity-10 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" value="Visiter l'hotel de vente">
+            </a>
+            <div class="text-neutral-200">
+                <div class="text-xl text-center md:text-end mt-10 md:mt-0 mb-2 underline">C'est quoi l'hotel de vente ?</div>
+                <div class="mb-1 text-center md:text-end">L'hotel de vente vous permet de poster des annonces de <u>vente</u> et de <u>recherche</u>
+                    d'objets.
+                </div>
+                <div class="text-center md:text-end">Pour pouvoir poster une annnonce, vous devez aboslument posséder un compte,</div>
+                <div class="text-center md:text-end">afin de pouvoir les supprimer une fois votre objet vendu/trouvé.</div>
+            </div>
+        </div>
+        <a href="{{ route('hdv') }}" class=" mt-6 invisible md:visible md:flex justify-center">
+            <input type="button" class="hover:cursor-pointer hover:bg-amber-400 animate-pulse inline-block px-10 py-4 border-2 border-yellow-500 text-yellow-500 font-medium leading-tight uppercase rounded hover:bg-black hover:bg-opacity-10 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" value="Visiter l'hotel de vente">
+        </a>
+
+        <div class="text-xl underline mb-6 md:mt-12 mt-4 text-neutral-200 text-center">Raccourcis de sites utiles :</div>
+
+
+        <div class="flex items-center justify-center mt-4">
+            <div class="grid md:grid-cols-3 grid-cols-1 mx-4 md:mx-0 md:w-1/2 gap-4 md:gap-6">
                 <a href="https://universe.flyff.com/play"
                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
                     <div class="flex items-center">
@@ -105,6 +132,7 @@
                     </div>
                 </a>
                 <div></div>
+                <!--
                 <a href="mentions"
                    class="p-3 w-full flex items-center max-w-xs transition ease-in-out hover:scale-105 h-40 md:h-48 rounded-lg shadow-xl bg-neutral-900 backdrop-blur bg-opacity-70 shadow-xl text-gray-300">
                     <div class="flex items-center">
@@ -120,13 +148,13 @@
                             <div class="text-2xl font-semibold flex justify-center text-white">Mentions légales</div>
                         </div>
                     </div>
-                </a>
+                </a>-->
             </div>
         </div>
     </div>
 
 
-<!--
+    <!--
     <div class="flex justify-center">
         <div class="flex justify-center items-center transition ease-in-out hover:scale-110">
             <div class="text-white z-10 absolute">
@@ -146,7 +174,26 @@
         </button>
     </form>
 </div>
-@else
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @else
         <div class="ml-3 text-sm font-normal">
             <div class="text-xl font-semibold underline text-white">Déconnecté</div>
             <div class="flex gap-1">
@@ -158,7 +205,26 @@
                                class="hover:underline hover:text-blue-700 text-lg text-blue-500 font-normal">s'inscrire</a>
                         </div>
                     </div>
-                @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @endif
     </div>
     <div>
         <svg id="visual" viewBox="0 0 600 600" width="400" height="400" xmlns="http://www.w3.org/2000/svg"
@@ -192,12 +258,69 @@
 
 @if($hdvCount == 0)
         <div class="md:text-lg text-neutral-300 font-normal">Aucun nouvel objet</div>
-@elseif($hdvCount == 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @elseif($hdvCount == 1)
         <div class="md:text-lg text-neutral-300 font-normal">{{ $hdvCount }} nouvel objet</div>
-                        @else
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @else
         <div class="md:text-lg text-neutral-300 font-normal">{{ $hdvCount }} nouveaux objets
                             </div>
-                        @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @endif
 
     </div>
 </div>

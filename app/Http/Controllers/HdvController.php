@@ -6,6 +6,7 @@ use App\Models\Api;
 use App\Models\Hdv;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class HdvController extends Controller
 {
@@ -31,7 +32,17 @@ class HdvController extends Controller
             ->orderBy('created_at', 'DESC')
             ->count();
 
-        return view('home', compact('hdvCount'));
+        $lastPost = Hdv::select('objet', 'joueur', 'prix')
+            ->orderby('id', 'desc')
+            ->get();
+
+        $iconsItems = DB::table('hdvs')
+            ->join('apis', 'apis.nameFr', '=', 'hdvs.objet')
+            ->select('apis.icon', 'apis.nameFr')
+            ->orderby('hdvs.id', 'desc')
+            ->get();
+
+        return view('home', compact('hdvCount', 'lastPost', 'iconsItems'));
     }
 
     public function store(Request $request)
