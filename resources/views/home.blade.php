@@ -76,13 +76,13 @@
                 <div class="mb-1 flex flex-col gap-1">
                     <div class="text-lg text-center md:text-end">Dernières annonces :</div>
                     <div class="flex justify-center md:justify-start gap-2">
-                        <img style="height: 1.6em" src="https://api.flyff.com/image/item/{{ $iconsItems[0]->icon }}"><div>{{ $lastPost[0]->objet }}</div>
+                        <div>{{ $lastPost[0]->objet }}</div>
                     </div>
                     <div class="flex justify-center md:justify-start gap-2">
-                        <img style="height: 1.6em" src="https://api.flyff.com/image/item/{{ $iconsItems[1]->icon }}"><div>{{ $lastPost[1]->objet }}</div>
+                        <div>{{ $lastPost[1]->objet }}</div>
                     </div>
                     <div class="flex justify-center md:justify-start gap-2">
-                        <img style="height: 1.6em" src="https://api.flyff.com/image/item/{{ $iconsItems[2]->icon }}"><div>{{ $lastPost[2]->objet }}</div>
+                        <!-- <img style="height: 1.6em" src="https://api.flyff.com/image/item/{{ $iconsItems[2]->icon }}">--> <div>{{ $lastPost[2]->objet }}</div>
                     </div>
 
                 </div>
